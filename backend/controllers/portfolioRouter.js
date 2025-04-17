@@ -3,7 +3,8 @@ const portfolioRouter = express.Router();
 
 const portfolioTemplates = [
     { name: "Minimal", theme: "Light" },
-    { name: "Creative", theme: "Dark" }
+    { name: "Creative", theme: "Dark" },
+    { name: "Primitive", theme: "Dark" }
 ];
 
 portfolioRouter.get('/templates', (req, res) => {
