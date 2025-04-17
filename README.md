@@ -8,7 +8,7 @@
 Office Hub is a comprehensive website designed to cater to the daily needs of office professionals, especially freshers starting their careers. The platform offers a centralized hub where users can access essential tools and services required in an office environment. The main features of Office Hub are divided into three interactive cards:
 
 1. **Resume Builder**  
-   A user-friendly tool for creating professional resumes with customizable templates and downloadable formats.
+   A user-friendly tool  for creating professional resumes with customizable templates and downloadable formats.
 
 2. **Office Essentials E-commerce**  
    An online marketplace for purchasing office-related products such as stationery, electronics, desk organizers, and more.
