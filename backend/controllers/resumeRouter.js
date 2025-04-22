@@ -18,6 +18,7 @@ resumeRouter.post('/create', async (req, res) => {
     await newResume.save();
     res.status(201).json({ message: 'Resume created successfully!', resume: newResume });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Error creating resume', error });
   }
 });
