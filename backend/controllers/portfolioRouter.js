@@ -12,5 +12,15 @@ portfolioRouter.get('/templates', (req, res) => {
     res.status(200).send(portfolioTemplates);
   });
 
-
+portfolioRouter.post('/createportfolio', async (req, res) => {
+    try {
+      const { userName, name, bio, skills, projects, contact } = req.body;
+      const newPortfolio = new Portfolio({ userName, name, bio, skills, projects, contact });
+      await newPortfolio.save();
+      res.status(201).json({ message: 'Portfolio created successfully!', portfolio: newPortfolio });
+    } catch (error) {
+      res.status(500).json({ message: 'Error creating portfolio', error });
+      console.log(error)
+    }
+  });
 module.exports = portfolioRouter;
