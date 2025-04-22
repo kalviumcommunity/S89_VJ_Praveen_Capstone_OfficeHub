@@ -16,11 +16,3 @@ app.use("/resume",resumeRouter);
 app.use("/store",storeRouter);
 
 
-app.listen(3000,async()=>{
-    try {
-        await mongoose.connect(process.env.MONGO)
-        console.log("Server connected successfully")
-    } catch (error) {
-        console.log("Something went wrong",error);
-    }
-})
