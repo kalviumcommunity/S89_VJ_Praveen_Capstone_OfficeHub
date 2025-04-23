@@ -6,5 +6,5 @@ const storeSchema = new mongoose.Schema({
   shippingAddress: { type: String, required: true }
 }, { timestamps: true });
 
-const StoreOrder = mongoose.model('StoreOrder', storeSchema);
-module.exports = StoreOrder;
+ const store = mongoose.model('storeOrder', storeSchema);
+ module.exports = store;
