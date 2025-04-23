@@ -5,9 +5,10 @@ const ResumeSchema = new mongoose.Schema({
   email: { type: String, required: true },
   phone: { type: String },
   summary: { type: String },
-  education: { type:[String]},
-  experience: { type: [String]},
-  skills: { type:[String]},
+  education: { type: [String] },
+  experience: { type: [String] },
+  skills: { type: [String] },
+
 }, { timestamps: true });
 
 const Resume = mongoose.model('Resume', ResumeSchema);
