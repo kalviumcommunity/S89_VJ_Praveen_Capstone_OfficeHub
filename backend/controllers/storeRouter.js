@@ -1,6 +1,7 @@
 const express = require('express');
 const storeRouter = express.Router();
-const StoreOrder = require("../models/storeSchema");
+const store = require("../models/storeSchema")
+
 
 const products = [
     { name: "Notebook", category: "Stationery", price: 3.5 },
