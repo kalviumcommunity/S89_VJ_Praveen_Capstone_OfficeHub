@@ -7,6 +7,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
+app.get("/",(req,res)=>{
+    res.send("this is backend")
+})
+
 const portfolioRouter = require("./controllers/portfolioRouter");
 const resumeRouter = require("./controllers/resumeRouter");
 const storeRouter = require("./controllers/storeRouter");
