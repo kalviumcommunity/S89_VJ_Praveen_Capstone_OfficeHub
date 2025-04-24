@@ -23,4 +23,26 @@ portfolioRouter.post('/createportfolio', async (req, res) => {
       console.log(error)
     }
   });
+portfolioRouter.put('/updateportfolio/:id', async (req, res) => {
+    try {
+      const {id} = req.params;
+      if(!id){
+        return res.status(400).send({message:"Please provide id"});
+      }
+      const {userName, name, bio, skills, projects, contact} = req.body;
+      const updatedPortfolio = await Portfolio.findOneAndUpdate({_id:id},
+        {  userName, name, bio, skills, projects, contact  },
+        { new: true }
+      );
+  
+      if (!updatedPortfolio) {
+        return res.status(404).send({ message: "Portfolio not found" });
+      }
+  
+      res.status(200).send({ message: "Portfolio updated successfully", portfolio: updatedPortfolio });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ message: "Error updating portfolio",error });
+    }
+  });
 module.exports = portfolioRouter;
