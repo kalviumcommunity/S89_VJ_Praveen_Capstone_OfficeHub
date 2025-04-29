@@ -1,6 +1,6 @@
 const express = require('express');
 const portfolioRouter = express.Router();
-const Portfolio = require("../models/portfolioSchema")
+const Portfolio = require("../models/PortfolioSchema")
 
 const portfolioTemplates = [
     { name: "Minimal", theme: "Light" },
