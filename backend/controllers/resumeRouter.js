@@ -1,6 +1,6 @@
 const express = require('express');
 const resumeRouter = express.Router();
-const Resume = require("../models/resumeSchema")
+const Resume = require("../models/ResumeSchema")
 
 const resumeTemplates = [
     { name: "Classic", layout: "Single Column" },
