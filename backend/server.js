@@ -13,14 +13,11 @@ app.get("/",(req,res)=>{
 
 const portfolioRouter = require("./controllers/portfolioRouter");
 const resumeRouter = require("./controllers/resumeRouter");
-const storeRouter = require("./controllers/storeRouter");   
-const userRouter = require("./controllers/userRouter");
-
+const storeRouter = require("./controllers/storeRouter");
 
 app.use("/portfolio",portfolioRouter);
 app.use("/resume",resumeRouter);
 app.use("/store",storeRouter);
-app.use("/user",userRouter);
 
 
 app.listen(3000,async()=>{
