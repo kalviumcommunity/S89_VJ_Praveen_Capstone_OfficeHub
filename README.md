@@ -39,13 +39,7 @@ Office Hub is a comprehensive website designed to cater to the daily needs of of
 - **Day 17-18:** Integrate e-commerce backend for product listings and order data.
 - **Day 19-20:** Connect portfolio form with backend for saving user data.
 
-### Week 4: Testing, Polish & Deployment
-- **Day 21:** Perform testing across all features and fix bugs.
-- **Day 22-23:** Add styling and responsiveness using TailwindCSS or Bootstrap.
-- **Day 24:** Final touches – animations, transitions, and UI polish.
-- **Day 25:** Deploy website using Vercel/Netlify.
-- **Day 26-27:** Write documentation, prepare presentation.
-- **Day 28:** Final review, testing and submission.
+
 
 ## DEPLOYMENT BACKEND LINK
 * https://s89-vj-praveen-capstone-officehub-4.onrender.com
