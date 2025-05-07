@@ -1,0 +1,105 @@
+.home-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #0b0b0b; /* Royal black background */
+  color: #ffffff; /* White text for contrast */
+  min-height: 100vh; /* Full viewport height */
+}
+
+.home-header {
+  margin-bottom: 2rem;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  color: #ffffff; /* White text */
+}
+
+.home-header p {
+  font-size: 1.2rem;
+  color: #cccccc; /* Light gray text for better readability */
+}
+
+.home-sections {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.home-card {
+  background: #1a1a1a; /* Dark gray card background */
+  border: 1px solid #333333; /* Border with a slightly lighter shade */
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out;
+}
+
+.home-card:hover {
+  transform: translateY(-5px);
+}
+
+.home-card h2 {
+  font-size: 1.5rem;
+  color: #ffffff; /* White text */
+  margin-bottom: 1rem;
+}
+
+.home-card p {
+  font-size: 1rem;
+  color: #cccccc; /* Light gray text */
+  margin-bottom: 1.5rem;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff; /* Blue button */
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.home-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a; /* Dark gray background */
+  color: #ffffff; /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-links li a:hover {
+  color: #007bff; /* Blue on hover */
+}
+
+/* Rest of the Home.css remains unchanged */
