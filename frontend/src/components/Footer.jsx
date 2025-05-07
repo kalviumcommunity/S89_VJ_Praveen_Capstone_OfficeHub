@@ -33,7 +33,10 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="footer-bottom">
-        <p>&copy; 2025 OfficeHub. All rights reserved.</p>
+        <p>
+          © 2025 OfficeHub. All rights reserved. 
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </p>
       </div>
     </footer>
   );

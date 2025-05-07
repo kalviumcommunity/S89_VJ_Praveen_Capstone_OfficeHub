@@ -1,18 +1,25 @@
 .home-container {
-  text-align: center;
-  padding: 2rem;
-  background-color: #0b0b0b; /* Royal black background */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content below the navbar */
+  align-items: center;
+  min-height: 90vh; /* Reduced height to decrease page height */
+  width: 100%;
+  background: url('https://img.freepik.com/premium-photo/office-background-design_934064-373.jpg') no-repeat center center fixed; /* Background image */
+  background-size: cover; /* Cover the entire container */
   color: #ffffff; /* White text for contrast */
-  min-height: 100vh; /* Full viewport height */
+  padding-top: 4rem; /* Add space for the fixed navbar */
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .home-header {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
 .home-header h1 {
   font-size: 2.5rem;
-  color: #ffffff; /* White text */
+  color: #0f0f0f; /* White text */
 }
 
 .home-header p {
@@ -25,14 +32,16 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .home-card {
-  background: #1a1a1a; /* Dark gray card background */
+  background: rgba(26, 26, 26, 0.8); /* Semi-transparent dark background for cards */
   border: 1px solid #333333; /* Border with a slightly lighter shade */
   border-radius: 8px;
-  padding: 1.5rem;
-  width: 300px;
+  padding: 2rem; /* Increased padding for larger box size */
+  width: 400px; /* Increased width of the card */
+  height: 250px; /* Added height to make the card larger */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   transition: transform 0.2s ease-in-out;
 }
@@ -42,64 +51,49 @@
 }
 
 .home-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Increased font size for card title */
   color: #ffffff; /* White text */
   margin-bottom: 1rem;
 }
 
 .home-card p {
-  font-size: 1rem;
+  font-size: 1.1rem; /* Increased font size for card text */
   color: #cccccc; /* Light gray text */
   margin-bottom: 1.5rem;
 }
 
 .home-link {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.5rem; /* Increased padding for larger button */
   background-color: #007bff; /* Blue button */
   color: #ffffff; /* White text */
   text-decoration: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Increased font size for button text */
 }
 
 .home-link:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Navbar Styles */
-.navbar {
+.footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1a1a1a; /* Dark gray background */
+  justify-content: center; /* Center the footer content */
+  align-items: center; /* Vertically align the content */
+  height: 50px; /* Reduced height */
+  background-color: #1a1a1a; /* Dark background */
   color: #ffffff; /* White text */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  font-size: 0.8rem; /* Reduced font size */
+  padding: 0.5rem; /* Reduced padding */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
 }
 
-.navbar-logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
+.footer a {
+  color: #007bff; /* Blue links */
   text-decoration: none;
+  margin-left: 0.5rem; /* Add spacing between links */
 }
 
-.navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+.footer a:hover {
+  color: #0056b3; /* Darker blue on hover */
 }
-
-.navbar-links li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.2s ease-in-out;
-}
-
-.navbar-links li a:hover {
-  color: #007bff; /* Blue on hover */
-}
-
-/* Rest of the Home.css remains unchanged */

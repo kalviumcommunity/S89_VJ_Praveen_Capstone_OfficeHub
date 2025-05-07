@@ -1,4 +1,4 @@
-.ecommerce-container {
+.portfolio-container {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   padding: 2rem;
@@ -33,68 +33,50 @@
   font-size: 1rem;
 }
 
-.ecommerce-header {
+.portfolio-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.ecommerce-header h1 {
+.portfolio-header h1 {
   font-size: 2.5rem;
   color: #333;
 }
 
-.ecommerce-header p {
+.portfolio-header p {
   font-size: 1.2rem;
   color: #666;
 }
 
-.categories-section {
+.portfolio-section {
   text-align: center;
+  margin-top: 2rem;
 }
 
-.categories-section h2 {
+.portfolio-section h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: #333;
 }
 
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-}
-
-.category-card {
+.portfolio-content {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
+  padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.category-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.category-card h3 {
+.portfolio-content p {
   font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
-.explore-button {
-  padding: 0.5rem 1rem;
+.create-portfolio-button {
+  padding: 0.7rem 1.5rem;
   background-color: #0369d6;
   color: #fff;
   border: none;
@@ -104,6 +86,6 @@
   transition: background-color 0.3s ease;
 }
 
-.explore-button:hover {
+.create-portfolio-button:hover {
   background-color: #024a9e;
 }

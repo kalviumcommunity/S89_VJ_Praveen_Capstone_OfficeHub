@@ -1,6 +1,6 @@
 /* Footer Container */
 .footer-container {
-  background-color: #1a1a1a; /* Dark background */
+    background: linear-gradient(90deg, #0f0f0f, #0369d6); /* Dark background */
   color: #ffffff; /* White text */
   padding: 2rem 2rem 2rem 1rem; /* Add extra padding on the right */
   display: flex;
@@ -82,4 +82,27 @@
   border-top: 1px solid #333333;
   padding-top: 1rem;
   width: 100%;
+}
+
+/* General Footer Styles */
+.footer {
+  display: flex;
+  justify-content: center; /* Center the footer content */
+  align-items: center; /* Vertically align the content */
+  height: 50px; /* Reduced height */
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff; /* White text */
+  font-size: 0.8rem; /* Reduced font size */
+  padding: 0.5rem; /* Reduced padding */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
+}
+
+.footer a {
+  color: #007bff; /* Blue links */
+  text-decoration: none;
+  margin-left: 0.5rem; /* Add spacing between links */
+}
+
+.footer a:hover {
+  color: #0056b3; /* Darker blue on hover */
 }

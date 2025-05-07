@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Home.css'; // Reuse the navbar styles from Home.css
+import '../styles/PortfolioCreator.css'; // Add a new CSS file for Portfolio Creator-specific styles
 
 const PortfolioCreator = () => {
   return (
-    <div className="home-container">
+    <div className="portfolio-container">
       <nav className="navbar">
         <div className="navbar-logo">
           <Link to="/">OfficeHub</Link>
@@ -24,10 +24,17 @@ const PortfolioCreator = () => {
           </li>
         </ul>
       </nav>
-      <header className="home-header">
+      <header className="portfolio-header">
         <h1>Portfolio Creator</h1>
-        <p>Create and showcase your professional portfolio.</p>
+        <p>Build and showcase your professional portfolio with ease.</p>
       </header>
+      <section className="portfolio-section">
+        <h2>Create Your Portfolio</h2>
+        <div className="portfolio-content">
+          <p>Start by adding your projects, skills, and achievements to create a stunning portfolio.</p>
+          <button className="create-portfolio-button">Get Started</button>
+        </div>
+      </section>
     </div>
   );
 };
