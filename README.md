@@ -37,7 +37,7 @@ Office Hub is a comprehensive website designed to cater to the daily needs of of
 - **Day 15:** Set up backend (Node.js/Express or Firebase) and database (MongoDB/Firestore).
 - **Day 16:** Integrate resume data storage and resume builder logic.
 - **Day 17-18:** Integrate e-commerce backend for product listings and order data.
-- **Day 19-20:** Connect portfolio form with backend for saving user data.
+- **Day 19-20:** Connect portfolio form with backend for saving user dats are there.
 
 ### Week 4: Testing, Polish & Deployment
 - **Day 21:** Perform testing across all features and fix bugs.
