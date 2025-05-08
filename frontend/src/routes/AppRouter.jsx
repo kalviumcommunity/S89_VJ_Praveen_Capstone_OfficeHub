@@ -7,6 +7,9 @@ import Ecommerce from '../pages/Ecommerce'; // Import the Ecommerce component
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Footer from '../components/Footer';
+import Clothing from '../pages/Clothing'; // Import the Clothing component
+import Navbar from '../components/Navbar';  
+
 
 const AppRouter = () => {
   return (
@@ -17,6 +20,7 @@ const AppRouter = () => {
           <Route path="/resume-builder" element={<ResumeBuilder />} />
           <Route path="/portfolio-creator" element={<PortfolioCreator />} />
           <Route path="/ecommerce" element={<Ecommerce />} /> 
+          <Route path="/clothing" element={<Clothing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/PortfolioCreator.css'; // Add a new CSS file for Portfolio Creator-specific styles
+import Footer from '../components/Footer';
 
 const PortfolioCreator = () => {
   return (
@@ -35,6 +36,7 @@ const PortfolioCreator = () => {
           <button className="create-portfolio-button">Get Started</button>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

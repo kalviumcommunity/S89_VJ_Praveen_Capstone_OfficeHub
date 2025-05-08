@@ -4,7 +4,7 @@ import '../styles/Ecommerce.css'; // Updated CSS file for better styling
 
 const Ecommerce = () => {
   const categories = [
-    { id: 1, name: 'Clothing', image: 'https://via.placeholder.com/300x200?text=Clothing' },
+    { id: 1, name: 'Clothing', image: 'https://via.placeholder.com/300x200?text=Clothing', link: '/clothing' },
     { id: 2, name: 'Laptops', image: 'https://via.placeholder.com/300x200?text=Laptops' },
     { id: 3, name: 'Stationery', image: 'https://via.placeholder.com/300x200?text=Stationery' },
     { id: 4, name: 'Electronics', image: 'https://via.placeholder.com/300x200?text=Electronics' },
@@ -46,7 +46,13 @@ const Ecommerce = () => {
             <div key={category.id} className="category-card">
               <img src={category.image} alt={category.name} className="category-image" />
               <h3>{category.name}</h3>
-              <button className="explore-button">Explore</button>
+              {category.link ? (
+                <Link to={category.link} className="explore-button">
+                  Explore
+                </Link>
+              ) : (
+                <button className="explore-button">Explore</button>
+              )}
             </div>
           ))}
         </div>
