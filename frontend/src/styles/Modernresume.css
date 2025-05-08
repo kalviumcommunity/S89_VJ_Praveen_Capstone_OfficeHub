@@ -1,9 +1,80 @@
-/* Ensure the body and html do not scroll */
 body, html {
   margin: 0;
   padding: 0;
   overflow: hidden; /* Disable scrolling */
   height: 100%; /* Ensure the body takes up the full height */
+}
+
+.modern-resume {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.resume-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+}
+
+.resume-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+}
+
+.skills-list li {
+  background: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }
 
 /* Ensure the container takes up the full viewport */
@@ -58,12 +129,6 @@ body, html {
   overflow-y: auto; /* Allow scrolling within the templates section if needed */
 }
 
-.templates-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #ffffff;
-}
-
 .templates-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -91,12 +156,6 @@ body, html {
   height: auto;
   border-radius: 4px;
   margin-bottom: 1rem;
-}
-
-.template-card h3 {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
 }
 
 .select-button {

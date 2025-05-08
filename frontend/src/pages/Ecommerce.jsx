@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Ecommerce.css'; // Updated CSS file for better styling
+import Navbar from '../components/Navbar'; // Import Navbar
+import '../styles/Ecommerce.css';
 
 const Ecommerce = () => {
   const categories = [
@@ -16,25 +16,7 @@ const Ecommerce = () => {
 
   return (
     <div className="ecommerce-container">
-      <nav className="navbar">
-        <div className="navbar-logo">
-          <Link to="/">OfficeHub</Link>
-        </div>
-        <ul className="navbar-links">
-          <li>
-            <Link to="/resume-builder">Resume Builder</Link>
-          </li>
-          <li>
-            <Link to="/ecommerce">E-commerce</Link>
-          </li>
-          <li>
-            <Link to="/portfolio-creator">Portfolio Creator</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar /> {/* Navbar imported and fixed */}
       <header className="ecommerce-header">
         <h1>E-commerce</h1>
         <p>Explore a variety of office essentials and shop for what you need.</p>
@@ -47,9 +29,9 @@ const Ecommerce = () => {
               <img src={category.image} alt={category.name} className="category-image" />
               <h3>{category.name}</h3>
               {category.link ? (
-                <Link to={category.link} className="explore-button">
+                <a href={category.link} className="explore-button">
                   Explore
-                </Link>
+                </a>
               ) : (
                 <button className="explore-button">Explore</button>
               )}

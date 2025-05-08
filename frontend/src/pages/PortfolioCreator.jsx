@@ -1,30 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/PortfolioCreator.css'; // Add a new CSS file for Portfolio Creator-specific styles
-import Footer from '../components/Footer';
+import Navbar from '../components/Navbar'; // Import Navbar
+import '../styles/PortfolioCreator.css';
 
 const PortfolioCreator = () => {
   return (
     <div className="portfolio-container">
-      <nav className="navbar">
-        <div className="navbar-logo">
-          <Link to="/">OfficeHub</Link>
-        </div>
-        <ul className="navbar-links">
-          <li>
-            <Link to="/resume-builder">Resume Builder</Link>
-          </li>
-          <li>
-            <Link to="/ecommerce">E-commerce</Link>
-          </li>
-          <li>
-            <Link to="/portfolio-creator">Portfolio Creator</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar /> {/* Navbar imported and fixed */}
       <header className="portfolio-header">
         <h1>Portfolio Creator</h1>
         <p>Build and showcase your professional portfolio with ease.</p>
@@ -36,7 +17,6 @@ const PortfolioCreator = () => {
           <button className="create-portfolio-button">Get Started</button>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

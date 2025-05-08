@@ -1,8 +1,8 @@
 /* Footer Container */
 .footer-container {
-    background: linear-gradient(90deg, #0f0f0f, #0369d6); /* Dark background */
+  background: linear-gradient(90deg, #16021b, #042951); /* Dark background */
   color: #ffffff; /* White text */
-  padding: 2rem 2rem 2rem 1rem; /* Add extra padding on the right */
+  padding: 0.15rem 0.25rem; /* Reduced padding */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,31 +11,36 @@
 /* Footer Content */
 .footer-content {
   display: flex;
+  flex-direction: row; /* Horizontal layout */
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* Align items vertically */
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 1rem;
-  padding-right: 2rem; /* Add space to the right */
+  margin-bottom: 0.5rem; /* Increased margin for spacing */
+  padding-right: 0.5rem; /* Increased padding for spacing */
+  gap: 2rem; /* Add space between left and right sections */
 }
 
 /* Left Section: Quick Links */
 .footer-left {
   flex: 1;
+  text-align: left; /* Align text to the left */
 }
 
 .footer-left h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 0.9rem; /* Slightly larger font size */
+  margin-bottom: 0.2rem; /* Adjusted margin */
 }
 
 .footer-left ul {
   list-style: none;
   padding: 0;
+  display: flex; /* Horizontal list */
+  gap: 1rem; /* Increased spacing between list items */
 }
 
 .footer-left ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0; /* Remove vertical margin */
 }
 
 .footer-left ul li a {
@@ -51,23 +56,23 @@
 /* Right Section: Social Media */
 .footer-right {
   flex: 1;
-  text-align: right;
+  text-align: right; /* Align text to the right */
 }
 
 .footer-right h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 0.9rem; /* Slightly larger font size */
+  margin-bottom: 0.2rem; /* Adjusted margin */
 }
 
 .social-icons {
-  display: flex;
+  display: flex; /* Horizontal layout for icons */
   justify-content: flex-end;
-  gap: 1rem;
+  gap: 1rem; /* Increased spacing between icons */
 }
 
 .social-icons a {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Increased icon size */
   transition: color 0.2s ease-in-out;
 }
 
@@ -78,31 +83,19 @@
 /* Bottom Section */
 .footer-bottom {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.6rem; /* Slightly larger font size */
   border-top: 1px solid #333333;
-  padding-top: 1rem;
+  padding-top: 0.2rem; /* Adjusted padding */
   width: 100%;
 }
 
 /* General Footer Styles */
 .footer {
-  display: flex;
-  justify-content: center; /* Center the footer content */
-  align-items: center; /* Vertically align the content */
-  height: 50px; /* Reduced height */
-  background-color: #1a1a1a; /* Dark background */
-  color: #ffffff; /* White text */
-  font-size: 0.8rem; /* Reduced font size */
-  padding: 0.5rem; /* Reduced padding */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
-}
-
-.footer a {
-  color: #007bff; /* Blue links */
-  text-decoration: none;
-  margin-left: 0.5rem; /* Add spacing between links */
-}
-
-.footer a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  background-color: #333; /* Footer background color */
+  color: #fff; /* Footer text color */
+  text-align: center;
+  padding: 0.2rem 0.3rem; /* Adjusted padding */
+  font-size: 0.6rem; /* Slightly larger font size */
+  position: relative; /* Ensure it doesn't stick to the bottom */
+  margin-top: -0.15rem; /* Adjusted margin to move it slightly upward */
 }

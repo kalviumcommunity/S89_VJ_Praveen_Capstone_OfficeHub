@@ -1,13 +1,16 @@
 .signup-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   min-height: 100vh;
-  background-color: #f9f9f9; /* Light background */
+  background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg') ;/* Light background */
+  background-size: cover; /* Cover the entire container */
+  padding: 2rem; /* Add padding for spacing */
 }
 
 .signup-form {
-  background: #ffffff;
+  background: url('https://i.pinimg.com/736x/c5/d3/96/c5d39673421676a6a0faff0a6893564e.jpg') ;
+  background-size: cover;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -18,7 +21,7 @@
 
 .signup-form h2 {
   margin-bottom: 1.5rem;
-  color: #333333;
+  color: #0e0202;
 }
 
 .form-group {

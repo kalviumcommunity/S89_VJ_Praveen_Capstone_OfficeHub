@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import Navbar from '../components/Navbar'; // Import Navbar component
 import '../styles/Login.css'; // Import styles for the login page
 
 const Login = () => {
@@ -21,6 +22,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <Navbar /> {/* Add Navbar */}
       <div className="login-form">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
@@ -48,9 +50,11 @@ const Login = () => {
           </div>
           <button type="submit" className="login-button">Login</button>
         </form>
-        <p className="signup-link">
-          Don't have an account? <Link to="/signup">Sign up</Link>
-        </p>
+        <div className="signup-link">
+          <p>
+            Don't have an account? <Link to="/signup">Sign up</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

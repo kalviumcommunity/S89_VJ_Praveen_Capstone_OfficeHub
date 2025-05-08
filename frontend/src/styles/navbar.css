@@ -3,7 +3,7 @@
   justify-content: space-between; /* Space between logo and links */
   align-items: center;
   padding: 0.5rem 1rem; /* Adjusted padding for smaller navbar */
-  background: linear-gradient(90deg, #0f0f0f, #0769d1); /* Gradient background */
+  background: linear-gradient(90deg, #111112, #5b5a5a); /* Gradient background */
   color: #ffffff; /* White text */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   width: 100%; /* Full width */

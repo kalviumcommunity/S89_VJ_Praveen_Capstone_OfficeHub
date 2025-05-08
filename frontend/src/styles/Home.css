@@ -1,15 +1,37 @@
+
+
+/* Ensure the home container takes up the full viewport */
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content below the navbar */
+  justify-content: space-between; /* Space between navbar, content, and footer */
   align-items: center;
-  min-height: 90vh; /* Reduced height to decrease page height */
+  height: 100vh; /* Full viewport height */
   width: 100%;
-  background: url('https://img.freepik.com/premium-photo/office-background-design_934064-373.jpg') no-repeat center center fixed; /* Background image */
-  background-size: cover; /* Cover the entire container */
-  color: #ffffff; /* White text for contrast */
+  position: relative; /* Set position to relative for overlay */
+  color: #0c0c0c; /* White text for contrast */
   padding-top: 4rem; /* Add space for the fixed navbar */
   box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Add an overlay to decrease opacity */
+.home-container::before {
+  background: url('https://i.pinimg.com/736x/59/1e/40/591e401234f0092ab1a5079e75cd9bbf.jpg');
+  background-size: cover; /* Cover the entire container */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Place the overlay below the content */
+}
+
+/* Ensure content is above the overlay */
+.home-container > * {
+  position: relative;
+  z-index: 2;
 }
 
 .home-header {
@@ -19,31 +41,34 @@
 
 .home-header h1 {
   font-size: 2.5rem;
-  color: #0f0f0f; /* White text */
+  color: #0d0d0d; /* White text */
 }
 
 .home-header p {
   font-size: 1.2rem;
-  color: #cccccc; /* Light gray text for better readability */
+  color: #3c3b3b; /* Light gray text for better readability */
 }
 
 .home-sections {
   display: flex;
   justify-content: center;
+  align-items: center; /* Center cards vertically */
   gap: 2rem;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%; /* Take full height of the container */
 }
 
 .home-card {
   background: rgba(26, 26, 26, 0.8); /* Semi-transparent dark background for cards */
-  border: 1px solid #333333; /* Border with a slightly lighter shade */
-  border-radius: 8px;
+  border: 2px solid #000000; /* Add a black border */
+  border-radius: 8px; /* Keep the rounded corners */
   padding: 2rem; /* Increased padding for larger box size */
-  width: 400px; /* Increased width of the card */
-  height: 250px; /* Added height to make the card larger */
+  width: 300px; /* Adjusted width of the card */
+  height: 200px; /* Adjusted height of the card */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
   transition: transform 0.2s ease-in-out;
+  text-align: center; /* Center text inside the card */
 }
 
 .home-card:hover {
@@ -51,49 +76,90 @@
 }
 
 .home-card h2 {
-  font-size: 1.8rem; /* Increased font size for card title */
+  font-size: 1.5rem; /* Adjusted font size for card title */
   color: #ffffff; /* White text */
   margin-bottom: 1rem;
 }
 
 .home-card p {
-  font-size: 1.1rem; /* Increased font size for card text */
+  font-size: 1rem; /* Adjusted font size for card text */
   color: #cccccc; /* Light gray text */
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .home-link {
   display: inline-block;
-  padding: 0.7rem 1.5rem; /* Increased padding for larger button */
+  padding: 0.5rem 1rem; /* Adjusted padding for button */
   background-color: #007bff; /* Blue button */
   color: #ffffff; /* White text */
   text-decoration: none;
   border-radius: 4px;
-  font-size: 1.1rem; /* Increased font size for button text */
+  font-size: 1rem; /* Adjusted font size for button text */
 }
 
 .home-link:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
 
-.footer {
+/* Specific styling for the Portfolio card */
+.home-card.portfolio-card {
+  background: url('https://img.freepik.com/free-vector/ripped-notes-rectangle-frame-background_53876-99423.jpg?semt=ais_hybrid&w=740') no-repeat center center; /* Set the background image */
+  background-size: cover; /* Cover the entire card */
+  color: #333; /* Dark text for better contrast */
+  border: none; /* Remove the border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
   display: flex;
-  justify-content: center; /* Center the footer content */
-  align-items: center; /* Vertically align the content */
-  height: 50px; /* Reduced height */
-  background-color: #1a1a1a; /* Dark background */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+}
+
+.home-card.portfolio-card .home-link {
+  margin-top: 1rem; /* Add spacing above the button */
+  display: inline-block; /* Ensure the button is treated as a block element */
+  text-align: center; /* Center the text inside the button */
+}
+
+/* Specific styling for the Resume card */
+.home-card.resume-card {
+  background: url('https://i.pinimg.com/736x/3f/57/dc/3f57dc3548bb3e485a720d60f3071ab5.jpg') no-repeat center center; /* Set the background image */
+  background-size: 100% 100%; /* Ensure the image fits the card dimensions */
+  color: #ffffff; /* White text for better contrast */
+  border: 2px solid #000000; /* Add a black border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Specific styling for the E-commerce card */
+.home-card.ecommerce-card {
+  background: url('https://i.pinimg.com/736x/41/5b/ea/415beaa3279e4e369a0ed5d0a1034c49.jpg') no-repeat center center; /* Set the background image */
+  background-size: 100% 100%; /* Ensure the image fits the card dimensions */
+  color: #ffffff; /* White text for better contrast */
+  border: 2px solid #000000; /* Add a black border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Position it at the top of the page */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make it span the full width of the page */
+  z-index: 1000; /* Ensure it stays above other elements */
+  background-color: #1a1a1a; /* Add a background color */
   color: #ffffff; /* White text */
-  font-size: 0.8rem; /* Reduced font size */
-  padding: 0.5rem; /* Reduced padding */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
+  padding: 1rem; /* Add padding for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
 }
 
-.footer a {
-  color: #007bff; /* Blue links */
-  text-decoration: none;
-  margin-left: 0.5rem; /* Add spacing between links */
-}
 
-.footer a:hover {
-  color: #0056b3; /* Darker blue on hover */
-}
