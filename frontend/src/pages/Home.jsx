@@ -1,12 +1,18 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/Home.css';
+import logo from '../../../images/logo.png';
 
 const Home = () => {
   return (
     <div className="home-container">
       <Navbar /> {/* Navbar imported and fixed */}
       <header className="home-header">
+        <img
+          src={logo}
+          alt="OfficeHub Logo"
+          className="home-logo"
+        />
         <h1>Welcome to OfficeHub</h1>
         <p>Your one-stop solution for professional tools and resources.</p>
       </header>

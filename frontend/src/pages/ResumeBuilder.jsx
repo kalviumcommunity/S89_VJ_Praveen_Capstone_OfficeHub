@@ -22,7 +22,7 @@ const ResumeBuilder = () => {
   return (
     <div className="home-container">
       <Navbar /> {/* Use the Navbar component */}
-      <header className="home-header">
+      <header className="home-header-resume">
         <h1>Resume Builder</h1>
         <p>Build your professional resume with ease.</p>
       </header>

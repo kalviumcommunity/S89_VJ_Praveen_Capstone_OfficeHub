@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/clothing.css'; 
 import Navbar from '../components/Navbar';// Reuse the CSS file for styling
+import img1 from '../../../images/dress/men/blazer.png'
 
 const Clothing = () => {
   const menProducts = [

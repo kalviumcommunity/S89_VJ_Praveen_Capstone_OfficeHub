@@ -1,5 +1,3 @@
-
-
 /* Ensure the home container takes up the full viewport */
 .home-container {
   display: flex;
@@ -9,7 +7,7 @@
   height: 100vh; /* Full viewport height */
   width: 100%;
   position: relative; /* Set position to relative for overlay */
-  color: #0c0c0c; /* White text for contrast */
+  color: #516c7a; /* White text for contrast */
   padding-top: 4rem; /* Add space for the fixed navbar */
   box-sizing: border-box; /* Include padding in height calculation */
 }
@@ -34,19 +32,34 @@
   z-index: 2;
 }
 
+/* Styling for the logo */
+.home-logo {
+  width: 240px; /* Adjust the width of the logo */
+  height: 120px; /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Add spacing below the logo */
+  border-radius: 0px; /* Optional: Add rounded corners */
+  background: transparent;
+  margin-top: -5rem; /* Adjust spacing from the top */
+ /* Add a subtle shadow */
+}
+
+/* Styling for the header */
 .home-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: center; /* Center align the content */
+  margin-top: 7rem; /* Adjust spacing from the top */
+  color: #3c3b3b; /* Text color */
 }
 
 .home-header h1 {
-  font-size: 2.5rem;
-  color: #0d0d0d; /* White text */
+  font-size: 2.5rem; /* Adjust font size */
+  color: #6a89cc; /* Grey-blue color for the heading */
+  margin-bottom: 1rem; /* Add spacing below the heading */
 }
 
 .home-header p {
-  font-size: 1.2rem;
-  color: #3c3b3b; /* Light gray text for better readability */
+  font-size: 1.2rem; /* Adjust font size for the description */
+  color: #666666; /* Subtle grey color */
+  margin-bottom: 2rem; /* Add spacing below the description */
 }
 
 .home-sections {
@@ -80,6 +93,7 @@
   color: #ffffff; /* White text */
   margin-bottom: 1rem;
 }
+
 
 .home-card p {
   font-size: 1rem; /* Adjusted font size for card text */
