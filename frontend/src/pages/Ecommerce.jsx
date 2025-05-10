@@ -20,7 +20,7 @@ const Ecommerce = () => {
     <div className="ecommerce-container">
       <Navbar /> {/* Navbar imported and fixed */}
       <header className="ecommerce-header">
-        <h1>E-commerce</h1>
+        <h1>OFFICE THINGS</h1>
         <p>Explore a variety of office essentials and shop for what you need.</p>
       </header>
       <section className="categories-section">

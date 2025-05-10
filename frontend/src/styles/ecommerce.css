@@ -39,13 +39,15 @@ body, html {
 }
 
 .ecommerce-header h1 {
-  font-size: 1.8rem; /* Reduce font size */
-  color: #333;
+  font-size: 3.2rem; /* Reduce font size */
+  color: #105a8f;
+  margin-top: 8rem; /* Move the title down */
 }
 
 .ecommerce-header p {
   font-size: 1rem; /* Reduce font size */
-  color: #666;
+  color: #161515;
+  margin-top: 1rem; /* Move the description down */
 }
 
 /* Categories section */
@@ -59,6 +61,7 @@ body, html {
   font-size: 1.5rem; /* Reduce font size */
   margin-bottom: 1rem; /* Reduce margin */
   color: #333;
+  margin-top: -3rem;
 }
 
 .categories-grid {
