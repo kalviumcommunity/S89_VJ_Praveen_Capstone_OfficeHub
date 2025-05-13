@@ -1,6 +1,6 @@
 const express = require('express');
 const productRouter = express.Router();
-const Product = require('../models/productSchema');
+const Product = require('../models/productSchema ');
 
 
 // POST: Add a new product

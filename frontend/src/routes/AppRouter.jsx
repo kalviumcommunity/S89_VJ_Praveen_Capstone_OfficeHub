@@ -9,7 +9,7 @@ import Signup from '../pages/Signup';
 import Footer from '../components/Footer';
 import Clothing from '../pages/Clothing'; // Import the Clothing component
 import Navbar from '../components/Navbar';  
-import Modernresume from '../pages/Modernresume'; // Import Modernresume component
+import Modernresume from '../pages/Modernresume';
 
 
 const AppRouter = () => {
@@ -24,7 +24,9 @@ const AppRouter = () => {
           <Route path="/clothing" element={<Clothing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/modern-resume" element={<Modernresume />} /> {/* Add route for Modernresume */}
+          <Route path="/modern-resume" element={<Modernresume />} />
+          
+          {/* Add more routes as needed */}
         </Routes>
         <Footer />
       </div>

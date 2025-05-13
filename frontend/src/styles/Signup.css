@@ -1,15 +1,22 @@
-.signup-container {
+.page-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  flex-direction: column;
   min-height: 100vh;
-  background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg') ;/* Light background */
-  background-size: cover; /* Cover the entire container */
-  padding: 2rem; /* Add padding for spacing */
+  background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.signup-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .signup-form {
-  background: url('https://i.pinimg.com/736x/c5/d3/96/c5d39673421676a6a0faff0a6893564e.jpg') ;
+  background: url('https://i.pinimg.com/736x/c5/d3/96/c5d39673421676a6a0faff0a6893564e.jpg');
   background-size: cover;
   padding: 2rem;
   border-radius: 8px;
@@ -17,11 +24,6 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
-}
-
-.signup-form h2 {
-  margin-bottom: 1.5rem;
-  color: #0e0202;
 }
 
 .form-group {
@@ -33,20 +35,20 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #555555;
+  color: #555;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #007bff; /* Blue border on focus */
+  border-color: #007bff;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
@@ -54,7 +56,7 @@
   width: 100%;
   padding: 0.75rem;
   background-color: #007bff;
-  color: #ffffff;
+  color: white;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -66,16 +68,60 @@
   background-color: #0056b3;
 }
 
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.or-divider span {
+  padding: 0 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.google-signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  color: #757575;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-signin-button:hover {
+  background-color: #f1f1f1;
+}
+
+.google-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
 .login-link {
-  margin-top: 1rem;
   font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #555;
 }
 
-.login-link a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  color: #555;
 }

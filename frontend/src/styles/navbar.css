@@ -17,16 +17,9 @@
   overflow: hidden; /* Prevent content from overflowing */
 }
 
-.navbar-logo a {
-  font-size: 1.5rem; /* Adjusted font size for the logo */
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-.navbar-logo a:hover {
-  color: #ffcc00; /* Highlight logo on hover */
+.navbar-logo{
+  margin-top: -5rem;
+  margin-bottom: -7rem; /* Adjust logo position */
 }
 
 .navbar-links {
@@ -36,7 +29,8 @@
   gap: 0.8rem; /* Reduced gap between links */
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
   margin: 0; /* Remove extra margin */
-  width: auto; /* Adjust width dynamically */
+  width: auto;
+  margin-right: 5rem; /* Adjust width dynamically */
 }
 
 .navbar-links li {

@@ -5,7 +5,8 @@
   min-height: 100vh;
   background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg'); /* Light background */
   background-size: cover; /* Cover the entire container */
-  padding: 2rem; /* Add padding for spacing */
+  padding: 2rem; 
+  
 }
 
 .login-form {
@@ -18,6 +19,7 @@
   max-width: 400px;
   height: 500px; /* Increased height */
   text-align: center;
+  margin-left: 29rem;
 }
 
 .login-form h2 {
@@ -79,4 +81,48 @@
 
 .signup-link a:hover {
   text-decoration: underline;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.or-divider span {
+  padding: 0 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.google-signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  color: #757575;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.google-signin-button:hover {
+  background-color: #f1f1f1;
+}
+
+.google-icon {
+  margin-right: 10px;
+  font-size: 18px;
 }
