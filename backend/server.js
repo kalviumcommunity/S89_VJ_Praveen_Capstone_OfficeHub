@@ -12,6 +12,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const dotenv = require("dotenv");
 dotenv.config();
 
+const PORT = process.env.PORT || 3000;
+
 // Session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET || 'your_session_secret',
@@ -56,6 +58,7 @@ const userRouter = require("./controllers/userRouter");
 const cartRouter = require("./controllers/cartRouter");
 const productRouter = require("./controllers/productRouter");
 const authRoutes = require("./routes/authRoutes");
+const watchRouter = require("./controllers/watchRouter");
 
 app.use("/product", productRouter);
 app.use("/portfolio", portfolioRouter);
@@ -64,6 +67,7 @@ app.use("/store", storeRouter);
 app.use("/user", userRouter);
 app.use("/cart", cartRouter);
 app.use("/auth", authRoutes);
+app.use("/watche", watchRouter);
 
 // Google Auth Routes
 app.get('/auth/google',
@@ -76,7 +80,7 @@ app.get('/auth/google/callback',
     res.redirect('/');
   });
 
-const PORT = process.env.PORT || 3000;
+
 
 app.listen(PORT, async () => {
   try {

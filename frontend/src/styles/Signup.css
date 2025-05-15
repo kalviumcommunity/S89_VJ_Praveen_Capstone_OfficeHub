@@ -24,6 +24,8 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+  height: 650px;
+  margin-top: 5rem;
 }
 
 .form-group {
@@ -35,7 +37,7 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #555;
+  color: #080808;
 }
 
 .form-group input {
@@ -84,7 +86,7 @@
 
 .or-divider span {
   padding: 0 10px;
-  color: #777;
+  color: #f1ecec;
   font-size: 14px;
 }
 
@@ -95,7 +97,7 @@
   width: 100%;
   padding: 10px;
   background-color: #fff;
-  color: #757575;
+  color: #111010;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
@@ -115,7 +117,7 @@
 .login-link {
   font-size: 0.9rem;
   margin-top: 1rem;
-  color: #555;
+  color: #0a0a0a;
 }
 
 footer {

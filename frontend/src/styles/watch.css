@@ -1,0 +1,74 @@
+/* Container for the whole watch page */
+.watch-page-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Page heading */
+.watch-page-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Grid layout for watches */
+.watches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Individual watch card */
+.watch-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.watch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Watch image */
+.watch-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Watch name */
+.watch-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+/* Watch description */
+.watch-card p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #555;
+}
+
+/* Watch price */
+.watch-card strong {
+  font-size: 1rem;
+  color: #27ae60;
+}

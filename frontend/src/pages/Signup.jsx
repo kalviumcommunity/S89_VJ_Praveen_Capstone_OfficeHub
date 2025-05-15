@@ -1,26 +1,55 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Signup.css';
 import { FaGoogle } from 'react-icons/fa';
 
 const Signup = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+    setSuccess('');
 
-    // Simulate signup logic (replace with actual API call)
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    if (formData.password !== formData.confirmPassword) {
+      return alert('Password and Confirm Password do not match');
+    }
 
-    alert('Signup successful!');
-    navigate('/login'); // Redirect to login after signup
+    try {
+      const response = await axios.post('http://localhost:3000/user/signup', formData);
+
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify({
+        name: response.data.name,
+        id: response.data.id,
+        email: formData.email
+      }));
+
+      setSuccess(response.data.message || 'Signup successful!');
+      alert('Signup successful! Redirecting to login page...');
+      navigate('/login');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Signup failed. Please try again.');
+    }
   };
 
   return (
@@ -31,44 +60,64 @@ const Signup = () => {
           <div className="signup-form">
             <h1 className="text-3xl font-bold mb-4">Sign Up</h1>
             <form onSubmit={handleSubmit}>
+              {error && <p className="error-message">{error}</p>}
+              {success && <p className="success-message">{success}</p>}
+
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Enter your name"
                   required
                 />
               </div>
+
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Enter your email"
                   required
                 />
               </div>
+
               <div className="form-group">
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
                   id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="Enter your password"
                   required
                 />
               </div>
+
+              <div className="form-group">
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  placeholder="Confirm your password"
+                  required
+                />
+              </div>
+
               <button type="submit" className="signup-button">Sign Up</button>
 
-              <div className="or-divider">
-                <span>or</span>
-              </div>
+              <div className="or-divider"><span>or</span></div>
 
               <GoogleSignUpButton />
 

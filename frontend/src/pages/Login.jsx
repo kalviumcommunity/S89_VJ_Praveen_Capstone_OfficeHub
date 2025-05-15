@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'; // Import Navbar component
 import Footer from '../components/Footer'; // Import Footer component
 import '../styles/Login.css'; // Import styles for the login page
 import { FaGoogle } from 'react-icons/fa';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 
 const Login = () => {
@@ -11,17 +12,18 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Simulate login logic (replace with actual API call)
-    if (email === 'user@example.com' && password === 'password') {
-      console.log('Login successful');
-      navigate('/'); // Redirect to the home page after login
-    } else {
-      alert('Invalid email or password');
-    }
-  };
+  const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3000/user/login', {
+      email,
+      password
+    });
+            window.location.href = '/';
+        } catch (error) {
+            alert(error.response?.data?.message || 'Something went wrong');
+          }
+};
 
   const handleGoogleSignIn = () => {
     window.location.href = 'http://localhost:3000/auth/google';

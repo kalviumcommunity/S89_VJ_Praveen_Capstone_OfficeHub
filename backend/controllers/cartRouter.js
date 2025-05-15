@@ -3,6 +3,8 @@ const cartRouter = express.Router();
 const Cart = require('../models/cartSchema');
 const cartSchema = require('../models/cartSchema');
 
+
+
 // POST: Add a new cart or add products to an existing cart
 cartRouter.post('/', async (req, res) => {
   try {

@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import Clothing from '../pages/Clothing'; // Import the Clothing component
 import Navbar from '../components/Navbar';  
 import Modernresume from '../pages/Modernresume';
+import WatchPage from '../pages/watch';
 
 
 const AppRouter = () => {
@@ -25,6 +26,7 @@ const AppRouter = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/modern-resume" element={<Modernresume />} />
+          <Route path="/watches" element={<WatchPage />} />
           
           {/* Add more routes as needed */}
         </Routes>
