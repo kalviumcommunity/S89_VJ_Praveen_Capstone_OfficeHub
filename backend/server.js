@@ -59,6 +59,9 @@ const cartRouter = require("./controllers/cartRouter");
 const productRouter = require("./controllers/productRouter");
 const authRoutes = require("./routes/authRoutes");
 const watchRouter = require("./controllers/watchRouter");
+const laptopRouter = require("./controllers/laptopRouter");
+const perfumeRouter = require("./controllers/perfumeRouter");
+const shoeRouter = require("./controllers/shoeRouter");
 
 app.use("/product", productRouter);
 app.use("/portfolio", portfolioRouter);
@@ -68,6 +71,9 @@ app.use("/user", userRouter);
 app.use("/cart", cartRouter);
 app.use("/auth", authRoutes);
 app.use("/watche", watchRouter);
+app.use("/laptop",laptopRouter);
+app.use("/shoe", shoeRouter);
+app.use("/perfume", perfumeRouter);
 
 // Google Auth Routes
 app.get('/auth/google',

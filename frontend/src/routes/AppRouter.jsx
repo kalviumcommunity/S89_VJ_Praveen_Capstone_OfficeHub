@@ -11,7 +11,10 @@ import Clothing from '../pages/Clothing'; // Import the Clothing component
 import Navbar from '../components/Navbar';  
 import Modernresume from '../pages/Modernresume';
 import WatchPage from '../pages/watch';
-
+import ShoePage from '../pages/shoe';
+import LaptopPage from '../pages/laptop'; 
+import PerfumePage from '../pages/perfume'; // Import the Perfume component
+import CartPage from '../pages/Cart';
 
 const AppRouter = () => {
   return (
@@ -27,6 +30,10 @@ const AppRouter = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/modern-resume" element={<Modernresume />} />
           <Route path="/watches" element={<WatchPage />} />
+          <Route path='/laptop' element={<LaptopPage />} />
+          <Route path='/shoe' element={<ShoePage />} />
+          <Route path='/perfume' element={<PerfumePage />} />
+          <Route path='/cart' element={<CartPage />} />
           
           {/* Add more routes as needed */}
         </Routes>

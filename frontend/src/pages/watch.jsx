@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../../src/styles/watch.css'; // Create this CSS file for custom styling
+import '../../src/styles/watch.css'; 
+import Navbar from '../components/Navbar';
+
 
 const WatchPage = () => {
   const [watches, setWatches] = useState([]);
@@ -24,6 +26,7 @@ const WatchPage = () => {
 
   return (
     <div className="watch-page-container">
+      <Navbar/>
       <h1>Watches</h1>
       {loading && <p>Loading watches...</p>}
       {error && <p className="error">{error}</p>}

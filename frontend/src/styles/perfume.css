@@ -1,8 +1,8 @@
-/* watch.css */
+/* perfume.css */
 
-.watch-page-container {
+.perfume-page-container {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+  background: linear-gradient(to right, #f5f7fa, #e1e9f0);
   padding: 2rem;
   min-height: 100vh;
 }
@@ -27,7 +27,7 @@ h1 {
   max-width: 600px;
 }
 
-.watches-grid {
+.perfume-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
@@ -36,7 +36,7 @@ h1 {
   margin: 0 auto;
 }
 
-.watch-card {
+.perfume-card {
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -49,12 +49,12 @@ h1 {
   justify-content: space-between;
 }
 
-.watch-card:hover {
+.perfume-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.watch-image {
+.perfume-image {
   max-width: 100%;
   height: 220px;
   object-fit: contain;
@@ -62,24 +62,24 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-.watch-card:hover .watch-image {
+.perfume-card:hover .perfume-image {
   transform: scale(1.05);
 }
 
-.watch-card h3 {
+.perfume-card h3 {
   font-size: 1.6rem;
   color: #111;
   margin: 0.5rem 0;
 }
 
-.watch-card p {
+.perfume-card p {
   font-size: 1rem;
   color: #333;
   margin: 0.5rem 0;
 }
 
-.watch-card strong {
-  color: #00796b;
+.perfume-card strong {
+  color: #7b1fa2;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -89,11 +89,11 @@ h1 {
     font-size: 2.2rem;
   }
 
-  .watch-image {
+  .perfume-image {
     height: 180px;
   }
 
-  .watch-card {
+  .perfume-card {
     padding: 1rem;
   }
 }
