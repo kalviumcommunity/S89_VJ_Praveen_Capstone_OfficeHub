@@ -8,6 +8,7 @@ const ShoePage = () => {
   const [filteredShoes, setFilteredShoes] = useState([]);
   const [brands, setBrands] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState('');
+  const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -42,6 +43,12 @@ const ShoePage = () => {
     }
   };
 
+  const toggleFavorite = (id) => {
+    setFavorites(prev =>
+      prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]
+    );
+  };
+
   return (
     <div className="shoe-page-container">
       <Navbar />
@@ -54,11 +61,18 @@ const ShoePage = () => {
         <aside className="shoe-filter">
           <h3>Filter by Brand</h3>
           <ul>
-            <li onClick={() => handleBrandFilter('')} className={!selectedBrand ? 'active' : ''}>
+            <li
+              onClick={() => handleBrandFilter('')}
+              className={!selectedBrand ? 'active' : ''}
+            >
               All Brands
             </li>
             {brands.map((brand) => (
-              <li key={brand} onClick={() => handleBrandFilter(brand)} className={selectedBrand === brand ? 'active' : ''}>
+              <li
+                key={brand}
+                onClick={() => handleBrandFilter(brand)}
+                className={selectedBrand === brand ? 'active' : ''}
+              >
                 {brand}
               </li>
             ))}
@@ -68,7 +82,18 @@ const ShoePage = () => {
         <div className="shoe-content">
           <div className="shoe-grid">
             {filteredShoes.map((shoe) => (
-              <div key={shoe.id} className="shoe-card">
+              <div
+                key={shoe.id}
+                className="shoe-card"
+                style={{ position: 'relative' }}
+              >
+                <div
+                  className="favorite-toggle"
+                  onClick={() => toggleFavorite(shoe.id)}
+                  title="Toggle Favorite"
+                >
+                  {favorites.includes(shoe.id) ? '❤️' : '🤍'}
+                </div>
                 <img src={shoe.image} alt={shoe.name} className="shoe-image" />
                 <h3>{shoe.name}</h3>
                 <p>{shoe.description}</p>

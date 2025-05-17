@@ -14,7 +14,9 @@ import WatchPage from '../pages/watch';
 import ShoePage from '../pages/shoe';
 import LaptopPage from '../pages/laptop'; 
 import PerfumePage from '../pages/perfume'; // Import the Perfume component
-import CartPage from '../pages/Cart';
+// import CartPage from '../pages/Cart';
+import DevicePage from '../pages/Device';
+import FavoritePage from '../components/fav';
 
 const AppRouter = () => {
   return (
@@ -33,7 +35,9 @@ const AppRouter = () => {
           <Route path='/laptop' element={<LaptopPage />} />
           <Route path='/shoe' element={<ShoePage />} />
           <Route path='/perfume' element={<PerfumePage />} />
-          <Route path='/cart' element={<CartPage />} />
+          {/* <Route path='/cart' element={<CartPage />} /> */}
+          <Route path='/device' element={<DevicePage />} />
+          <Route path='/favorites' element={<FavoritePage />} />
           
           {/* Add more routes as needed */}
         </Routes>

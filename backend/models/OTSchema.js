@@ -34,12 +34,13 @@ const watchSchema = new mongoose.Schema(commonFields);
 
 // Accessories Schema
 const accessorySchema = new mongoose.Schema(commonFields);
-
+const DeviceSchema = new mongoose.Schema(commonFields);
 // Exporting models
 module.exports = {
   Laptop: mongoose.model('Laptop', laptopSchema),
   Shoe: mongoose.model('Shoe', shoeSchema),
   Perfume: mongoose.model('Perfume', perfumeSchema),
   Watch: mongoose.model('Watch', watchSchema),
-  Accessory: mongoose.model('Accessory', accessorySchema)
+  Accessory: mongoose.model('Accessory', accessorySchema),
+  Device: mongoose.model('Device', DeviceSchema)
 };

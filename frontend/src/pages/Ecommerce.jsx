@@ -13,7 +13,7 @@ const Ecommerce = () => {
     { id: 5, name: 'Watches', image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/watch/w/b/d/1-ft3025-new-designer-square-dial-reboot-men-original-imahb7wzqm6gyf74.jpeg?q=70', link: '/watches' },
     { id: 6, name: 'Accessories', image: 'https://i.pinimg.com/736x/87/9a/f8/879af827e191ca255ddb31a9842b8296.jpg' },
     { id: 7, name: 'Stationary', image: 'https://i.pinimg.com/736x/28/eb/92/28eb921ac748fc9d47a1430247e92622.jpg' },
-    { id: 8, name: 'Devices', image: 'https://i.pinimg.com/736x/e3/86/cc/e386ccc0b1134fc726729f8c42fa27b8.jpg' },
+    { id: 8, name: 'Devices', image: 'https://i.pinimg.com/736x/e3/86/cc/e386ccc0b1134fc726729f8c42fa27b8.jpg' , link: '/devices' },
   ];
 
   return (
