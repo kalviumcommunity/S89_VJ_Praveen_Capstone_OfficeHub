@@ -62,7 +62,10 @@ const watchRouter = require("./controllers/watchRouter");
 const laptopRouter = require("./controllers/laptopRouter");
 const perfumeRouter = require("./controllers/perfumeRouter");
 const shoeRouter = require("./controllers/shoeRouter");
-const DeviceRouter = require("./controllers/DeviceRouter");
+const Drouter = require("./controllers/Drouter");
+const Accessoryrouter = require("./controllers/Accessoryrouter");
+const Stationaryrouter = require("./controllers/Stationaryrouter");
+
 
 app.use("/product", productRouter);
 app.use("/portfolio", portfolioRouter);
@@ -75,7 +78,10 @@ app.use("/watche", watchRouter);
 app.use("/laptop",laptopRouter);
 app.use("/shoe", shoeRouter);
 app.use("/perfume", perfumeRouter);
-app.use("/devices", DeviceRouter);
+app.use("/devices", Drouter);
+app.use("/stationary", Stationaryrouter);
+app.use("/accessory", Accessoryrouter);
+
 
 // Google Auth Routes
 app.get('/auth/google',

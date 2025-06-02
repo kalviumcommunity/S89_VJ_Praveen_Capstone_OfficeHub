@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar'; // Import Navbar
+import Navbar from '../components/Navbar';
 import '../styles/Ecommerce.css';
-
-
+import { FaHeart, FaShoppingCart } from 'react-icons/fa'; // Import icons
+import { Link } from 'react-router-dom'; // For navigation
 
 const Ecommerce = () => {
   const categories = [
@@ -11,14 +11,23 @@ const Ecommerce = () => {
     { id: 3, name: 'Footwear', image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/w/d/o/-original-imah4a6hwmek7qve.jpeg?q=70' , link: '/shoe'  },
     { id: 4, name: 'Perfumes', image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/perfume/o/f/h/-original-imaguaytyf2jdhz4.jpeg?q=70', link: '/perfume' },
     { id: 5, name: 'Watches', image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/watch/w/b/d/1-ft3025-new-designer-square-dial-reboot-men-original-imahb7wzqm6gyf74.jpeg?q=70', link: '/watches' },
-    { id: 6, name: 'Accessories', image: 'https://i.pinimg.com/736x/87/9a/f8/879af827e191ca255ddb31a9842b8296.jpg' },
-    { id: 7, name: 'Stationary', image: 'https://i.pinimg.com/736x/28/eb/92/28eb921ac748fc9d47a1430247e92622.jpg' },
+    { id: 6, name: 'Accessories', image: 'https://i.pinimg.com/736x/87/9a/f8/879af827e191ca255ddb31a9842b8296.jpg', link: '/accessory' },
+    { id: 7, name: 'Stationay', image: 'https://i.pinimg.com/736x/28/eb/92/28eb921ac748fc9d47a1430247e92622.jpg' , link: '/stationary' },
     { id: 8, name: 'Devices', image: 'https://i.pinimg.com/736x/e3/86/cc/e386ccc0b1134fc726729f8c42fa27b8.jpg' , link: '/devices' },
   ];
 
   return (
-    <div className="ecommerce-container">
-      <Navbar /> {/* Navbar imported and fixed */}
+    <div className="ecommerce-container" style={{ position: 'relative' }}>
+      <Navbar />
+      {/* Top right icons */}
+      <div className="ecom-icons-topright">
+        <Link to="/favorites" className="icon-link" title="Favorites">
+          <FaHeart />
+        </Link>
+        <Link to="/cart" className="icon-link" title="Cart">
+          <FaShoppingCart />
+        </Link>
+      </div>
       <header className="ecommerce-header">
         <h1>OFFICE THINGS</h1>
         <p>Explore a variety of office essentials and shop for what you need.</p>

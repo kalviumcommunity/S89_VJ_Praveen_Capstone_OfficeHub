@@ -31,6 +31,7 @@ const perfumeSchema = new mongoose.Schema(commonFields);
 
 // Watches Schema
 const watchSchema = new mongoose.Schema(commonFields);
+const StationarySchema = new mongoose.Schema(commonFields);
 
 // Accessories Schema
 const accessorySchema = new mongoose.Schema(commonFields);
@@ -42,5 +43,6 @@ module.exports = {
   Perfume: mongoose.model('Perfume', perfumeSchema),
   Watch: mongoose.model('Watch', watchSchema),
   Accessory: mongoose.model('Accessory', accessorySchema),
-  Device: mongoose.model('Device', DeviceSchema)
+  Device: mongoose.model('Device', DeviceSchema),
+  Stationary: mongoose.model('Stationary', StationarySchema)
 };

@@ -16,7 +16,10 @@ import LaptopPage from '../pages/laptop';
 import PerfumePage from '../pages/perfume'; // Import the Perfume component
 // import CartPage from '../pages/Cart';
 import DevicePage from '../pages/Device';
-import FavoritePage from '../components/fav';
+import StationaryPage from '../pages/Stationary';
+import AccessoryPage from '../pages/Accessory';
+// import FavoritesPage from '../components/FavoritesPage';
+
 
 const AppRouter = () => {
   return (
@@ -36,8 +39,11 @@ const AppRouter = () => {
           <Route path='/shoe' element={<ShoePage />} />
           <Route path='/perfume' element={<PerfumePage />} />
           {/* <Route path='/cart' element={<CartPage />} /> */}
-          <Route path='/device' element={<DevicePage />} />
-          <Route path='/favorites' element={<FavoritePage />} />
+          <Route path='/devices' element={<DevicePage />} />
+          {/* <Route path='/favorites' element={<FavoritePage />} /> */}
+          <Route path='/Accessory' element={<AccessoryPage />} />
+          <Route path='/Stationary' element={<StationaryPage />} />
+          {/* <Route path='/favorites' element={<FavoritesPage />} /> */}
           
           {/* Add more routes as needed */}
         </Routes>
