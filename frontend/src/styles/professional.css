@@ -1,0 +1,280 @@
+/* ==== Reset & Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==== Resume Container ==== */
+.resume-container {
+  width: 794px;
+  height: 1123px;
+  margin: 40px auto;
+  background: #fff;
+  display: flex;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* ==== Left Side ==== */
+.left {
+  background:rgb(214, 163, 130); /* Pink */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 80px;
+  padding: 25px;
+  color: #fff;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+
+.left h2 {
+  width: 80%;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #fff;
+  text-align: left;
+}
+
+.left p {
+  width: 80%;
+  font-size: 0.85rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.7;
+  
+}
+
+.contact-me {
+  width: 80%;
+  text-align: left;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.contact-me p {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-me p i {
+  margin-right: 8px;
+}
+
+/* ==== Right Side ==== */
+.rights {
+  background: #f8f6f5;
+  width: 65%;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  color: #0c0b0ccf;
+  background-color: #d8c9c4;
+}
+
+.right h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.right h2 {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #ce977b; /* Darker shade of pink */
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:  #ce977b; /* Darker shade of pink */
+  margin-top: 28px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.section-title::before {
+  content: '▶';
+  color:  #ce977b; /* Pink */
+  font-size: 0.85rem;
+  margin-right: 10px;
+}
+
+.right h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 6px 0 2px 0;
+}
+
+.right p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.right ul {
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+}
+
+.right li {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* ==== Buttons (Edit, Print) ==== */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.buttons button {
+  padding: 8px 20px;
+  background-color:  #ce977b; /* Pink */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.buttons button:last-child {
+  background-color: #222;
+}
+
+.buttons button:hover {
+  opacity: 0.9;
+}
+
+/* ==== Form Styles (if needed) ==== */
+.resume-form {
+  max-width: 720px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 32px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resume-form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.resume-form input,
+.resume-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.resume-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.resume-form input:focus,
+.resume-form textarea:focus {
+  border-color:  #ce977b; /* Pink */
+  box-shadow: 0 0 0 3px rgba(233,30,99,0.2);
+  background-color: #fff;
+  outline: none;
+}
+
+.resume-form button {
+  background-color:  #ce977b; /* Pink */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s ease;
+}
+
+.resume-form button:hover {
+  background-color:  #ce977b; /* Darker pink */
+}
+
+/* ==== Print Styles ==== */
+@media print {
+  .resume-container {
+    width: 210mm;
+    height: 297mm;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    page-break-after: always;
+  }
+  .resume-form, .buttons {
+    display: none;
+  }
+  body {
+    background-color: #fff;
+  }
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+  .resume-container {
+    width: 95vw;
+    height: auto;
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+    padding: 32px;
+  }
+  .right {
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .resume-form {
+    padding: 24px 16px;
+  }
+}

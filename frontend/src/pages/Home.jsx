@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/Home.css';
-import logo from '../../../images/logo.png';
+import logo from '../../../images/l.png';
+import vid from '../../../images/ba.mp4'; // Import your video if needed
 
 const Home = () => {
   return (
@@ -47,6 +48,7 @@ const Home = () => {
       </div>
     </div>
   );
+   console.log("Home page rendered");
 };
 
 export default Home;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css'; // Import styles for the navbar
-import logo from '../../../images/log.png';
+import logo from '../../../images/l.png';
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">
+        <Link to="/home">
           <img
             src={logo}
             alt="OfficeHub Logo"

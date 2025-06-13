@@ -1,66 +1,291 @@
-import React from 'react';
-import '../styles/Modernresume.css'; // Import the CSS file for styling
-import userDetails from './userDetails'; // Import userDetails
+import React, { useState } from 'react';
+import '../styles/ModernResume.css';
 
-const Modernresume = () => {
+const ModernResume = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    title: '',
+    phone: '',
+    email: '',
+    address: '',
+    profile: '',
+    languages: '',
+    skills: '',
+    experience: '',
+    education: '',
+    hobbies: '',
+    photo: '',
+  });
+
+  const [showResume, setShowResume] = useState(false);
+  const [photoPreview, setPhotoPreview] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === 'photo' && files && files[0]) {
+      const file = files[0];
+      setFormData((prev) => ({
+        ...prev,
+        photo: file,
+      }));
+      setPhotoPreview(URL.createObjectURL(file));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowResume(true);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
-    <div className="modern-resume">
-      {/* Header Section */}
-      <header className="resume-header">
-        <h1>{userDetails.name}</h1>
-        <p>
-          {userDetails.title} | {userDetails.email} | {userDetails.phone}
-        </p>
-      </header>
+    <div className="modern-resume-container">
+      {!showResume ? (
+        <form className="modern-resume-form no-print" onSubmit={handleSubmit}>
+          <h2>Build Your Resume</h2>
+          <input type="file" name="photo" accept="image/*" onChange={handleChange} />
+          {photoPreview && <img src={photoPreview} alt="Preview" className="preview-img" />}
+          <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
+          <input type="text" name="title" placeholder="Profession" value={formData.title} onChange={handleChange} required />
+          <input type="text" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+          <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} required />
+          <textarea name="profile" placeholder="Profile Summary" value={formData.profile} onChange={handleChange} required />
+          <textarea name="languages" placeholder="Languages (comma separated)" value={formData.languages} onChange={handleChange} />
+          <textarea name="skills" placeholder="Skills (comma separated)" value={formData.skills} onChange={handleChange} required />
+          <textarea name="experience" placeholder="Experience (one per line)" value={formData.experience} onChange={handleChange} required />
+          <textarea name="education" placeholder="Education (one per line)" value={formData.education} onChange={handleChange} required />
+          <textarea name="hobbies" placeholder="Hobbies (comma separated)" value={formData.hobbies} onChange={handleChange} />
+          <button type="submit" className="modern-btn">Generate Resume</button>
+        </form>
+      ) : (
+        <div className="resume-preview">
+          <div className="print-buttons no-print">
+            <button className="modern-details-btn" onClick={() => setShowResume(false)}>Edit Resume</button>
+            <button className="modern-details-btn" onClick={handlePrint}>Print Resume</button>
+          </div>
 
-      {/* Summary Section */}
-      <section className="resume-section">
-        <h2>Summary</h2>
-        <p>{userDetails.summary}</p>
-      </section>
-
-      {/* Experience Section */}
-      <section className="resume-section">
-        <h2>Experience</h2>
-        {userDetails.experience.map((job, index) => (
-          <div key={index} className="resume-item">
-            <h3>{job.title}</h3>
-            <p>
-              {job.company} | {job.dates}
-            </p>
-            <ul>
-              {job.responsibilities.map((task, idx) => (
-                <li key={idx}>{task}</li>
+          <div className="resume-left">
+            <div className="photo-wrapper">
+              {photoPreview && <img src={photoPreview} alt="Profile" className="photo" />}
+            </div>
+            <div className="section-title">CONTACT</div>
+            <div className="contact-info">
+              <p>📱 {formData.phone}</p>
+              <p>📧 {formData.email}</p>
+              <p>📍 {formData.address}</p>
+            </div>
+            <div className="section-title">LANGUAGES</div>
+            <div className="languages">
+              {formData.languages.split(',').map((lang, i) => (
+                <div key={i} className="bar-container">
+                  <span>{lang.trim()}</span>
+                  <div className="bar"><div className="fill"></div></div>
+                </div>
               ))}
-            </ul>
+            </div>
+            <div className="section-title">SKILLS</div>
+            <div className="skills">
+              {formData.skills.split(',').map((skill, i) => (
+                <div key={i} className="bar-container">
+                  <span>{skill.trim()}</span>
+                  <div className="bar"><div className="fill"></div></div>
+                </div>
+              ))}
+            </div>
+            <div className="section-title">HOBBIES</div>
+            <div className="hobbies">
+              {formData.hobbies.split(',').map((hobby, i) => (
+                <span key={i} className="hobby-icon">🎯</span>
+              ))}
+            </div>
           </div>
-        ))}
-      </section>
 
-      {/* Education Section */}
-      <section className="resume-section">
-        <h2>Education</h2>
-        {userDetails.education.map((edu, index) => (
-          <div key={index} className="resume-item">
-            <h3>{edu.degree}</h3>
-            <p>
-              {edu.institution} | {edu.graduationDate}
-            </p>
+          <div className="resume-right">
+            <div className="header">
+              <h1>{formData.name}</h1>
+              <h2>{formData.title}</h2>
+            </div>
+
+            <div className="section">
+              <h3>PROFILE</h3>
+              <p>{formData.profile}</p>
+            </div>
+
+            <div className="section">
+              <h3>EDUCATION</h3>
+              <ul>
+                {formData.education.split('\n').map((edu, i) => (
+                  <li key={i}>{edu.trim()}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="section">
+              <h3>EXPERIENCE</h3>
+              <ul>
+                {formData.experience.split('\n').map((exp, i) => (
+                  <li key={i}>{exp.trim()}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        ))}
-      </section>
-
-      {/* Skills Section */}
-      <section className="resume-section">
-        <h2>Skills</h2>
-        <ul className="skills-list">
-          {userDetails.skills.map((skill, index) => (
-            <li key={index}>{skill}</li>
-          ))}
-        </ul>
-      </section>
+        </div>
+      )}
     </div>
   );
 };
 
-export default Modernresume;
+export default ModernResume;
+
+
+// import React, { useState } from 'react';
+// import '../styles/ModernResume.css';
+
+// const ModernResume = () => {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     title: '',
+//     phone: '',
+//     email: '',
+//     address: '',
+//     profile: '',
+//     languages: '',
+//     skills: '',
+//     experience: '',
+//     education: '',
+//     hobbies: '',
+//     photo: '',
+//   });
+
+//   const [showResume, setShowResume] = useState(false);
+//   const [photoPreview, setPhotoPreview] = useState('');
+
+//   const handleChange = (e) => {
+//     const { name, value, files } = e.target;
+//     if (name === 'photo' && files && files[0]) {
+//       const file = files[0];
+//       setFormData((prev) => ({
+//         ...prev,
+//         photo: file,
+//       }));
+//       setPhotoPreview(URL.createObjectURL(file));
+//     } else {
+//       setFormData((prev) => ({
+//         ...prev,
+//         [name]: value,
+//       }));
+//     }
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setShowResume(true);
+//   };
+
+//   return (
+//     <div className="modern-resume-container">
+//       {!showResume ? (
+//         <form className="modern-resume-form" onSubmit={handleSubmit}>
+//           <h2>Build Your Resume</h2>
+//           <input type="file" name="photo" accept="image/*" onChange={handleChange} />
+//           {photoPreview && <img src={photoPreview} alt="Preview" className="preview-img" />}
+//           <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required />
+//           <input type="text" name="title" placeholder="Profession" value={formData.title} onChange={handleChange} required />
+//           <input type="text" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
+//           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+//           <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} required />
+//           <textarea name="profile" placeholder="Profile Summary" value={formData.profile} onChange={handleChange} required />
+//           <textarea name="languages" placeholder="Languages (comma separated)" value={formData.languages} onChange={handleChange} />
+//           <textarea name="skills" placeholder="Skills (comma separated)" value={formData.skills} onChange={handleChange} required />
+//           <textarea name="experience" placeholder="Experience (one per line)" value={formData.experience} onChange={handleChange} required />
+//           <textarea name="education" placeholder="Education (one per line)" value={formData.education} onChange={handleChange} required />
+//           <textarea name="hobbies" placeholder="Hobbies (comma separated)" value={formData.hobbies} onChange={handleChange} />
+//           <button type="submit" className="modern-btn">Generate Resume</button>
+//         </form>
+//       ) : (
+//         <div className="resume-preview">
+//           <div className="resume-left">
+//             <div className="photo-wrapper">
+//               {photoPreview && <img src={photoPreview} alt="Profile" className="photo" />}
+//             </div>
+//             <div className="section-title">CONTACT</div>
+//             <div className="contact-info">
+//               <p>📱 {formData.phone}</p>
+//               <p>📧 {formData.email}</p>
+//               <p>📍 {formData.address}</p>
+//             </div>
+//             <div className="section-title">LANGUAGES</div>
+//             <div className="languages">
+//               {formData.languages.split(',').map((lang, i) => (
+//                 <div key={i} className="bar-container">
+//                   <span>{lang.trim()}</span>
+//                   <div className="bar"><div className="fill"></div></div>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="section-title">SKILLS</div>
+//             <div className="skills">
+//               {formData.skills.split(',').map((skill, i) => (
+//                 <div key={i} className="bar-container">
+//                   <span>{skill.trim()}</span>
+//                   <div className="bar"><div className="fill"></div></div>
+//                 </div>
+//               ))}
+//             </div>
+//             <div className="section-title">HOBBIES</div>
+//             <div className="hobbies">
+//               {formData.hobbies.split(',').map((hobby, i) => (
+//                 <span key={i} className="hobby-icon">🎯</span>
+//               ))}
+//             </div>
+//           </div>
+
+//           <div className="resume-right">
+//             <div className="header">
+//               <h1>{formData.name}</h1>
+//               <h2>{formData.title}</h2>
+//             </div>
+
+//             <div className="section">
+//               <h3>PROFILE</h3>
+//               <p>{formData.profile}</p>
+//             </div>
+
+//             <div className="section">
+//               <h3>EDUCATION</h3>
+//               <ul>
+//                 {formData.education.split('\n').map((edu, i) => (
+//                   <li key={i}>{edu.trim()}</li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             <div className="section">
+//               <h3>EXPERIENCE</h3>
+//               <ul>
+//                 {formData.experience.split('\n').map((exp, i) => (
+//                   <li key={i}>{exp.trim()}</li>
+//                 ))}
+//               </ul>
+//             </div>
+
+//             <button className="modern-btn" onClick={() => setShowResume(false)}>
+//               Edit Resume
+//             </button>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ModernResume;

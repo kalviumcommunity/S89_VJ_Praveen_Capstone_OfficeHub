@@ -1,31 +1,42 @@
 .page-container {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 100vh;
-  background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg');
-  background-size: cover;
-  background-position: center;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.openpage-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .signup-container {
-  flex: 1;
+  position: relative;
+  z-index: 2;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  min-height: 100vh;
 }
 
 .signup-form {
-  background: url('https://i.pinimg.com/736x/c5/d3/96/c5d39673421676a6a0faff0a6893564e.jpg');
-  background-size: cover;
+  background: rgba(5, 3, 3, 0.85); /* semi-transparent white */
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
   width: 100%;
   max-width: 400px;
   text-align: center;
-  height: 650px;
-  margin-top: 5rem;
+  margin-top: 4rem;
+  margin-left: 25rem;
 }
 
 .form-group {

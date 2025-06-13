@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Signup.css';
 import { FaGoogle } from 'react-icons/fa';
+import vid from '../../../images/ba.mp4'; // <-- Import your video
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -54,8 +55,15 @@ const Signup = () => {
 
   return (
     <>
-      <Navbar />
+      
       <div className="page-container">
+        <video
+          className="openpage-bg-video"
+          src={vid} // Replace with your demo video URL
+          autoPlay
+          loop
+          muted
+        />
         <div className="signup-container">
           <div className="signup-form">
             <h1 className="text-3xl font-bold mb-4">Sign Up</h1>

@@ -9,7 +9,7 @@ router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }),
   function(req, res) {
     // Successful authentication, redirect to frontend
-    res.redirect('http://localhost:5173/');
+    res.redirect('http://localhost:5173/home');
   });
 
 module.exports = router;

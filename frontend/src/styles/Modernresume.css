@@ -1,173 +1,265 @@
-body, html {
+/* ===== Reset & Base Styles ===== */
+* {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Disable scrolling */
-  height: 100%; /* Ensure the body takes up the full height */
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.modern-resume {
-  font-family: 'Arial', sans-serif;
+body {
+  background-color: #f0f2f5;
   color: #333;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 2rem auto;
+}
+
+.modern-resume-container {
   padding: 2rem;
-  background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
-.resume-header {
+/* ===== Form Styling ===== */
+.modern-resume-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modern-resume-form h2 {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.resume-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #007bff;
-}
-
-.resume-header p {
-  font-size: 1rem;
-  color: #555;
-}
-
-.resume-section {
-  margin-bottom: 2rem;
-}
-
-.resume-section h2 {
-  font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
-  display: inline-block;
+  color: #2e4053;
 }
 
-.resume-item h3 {
-  font-size: 1.2rem;
+.modern-resume-form input,
+.modern-resume-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.modern-resume-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.preview-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.modern-btn {
+  background: #2e86de;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modern-btn:hover {
+  background: #1b4f72;
+}
+
+/* ===== Resume Layout ===== */
+.resume-preview {
+  width: 794px;         /* A4 width at 96dpi */
+  height: 1123px;       /* A4 height at 96dpi */
+  margin: 40px auto;
+  background: #f7f5f5;
+  box-shadow: 0 0 15px rgba(12, 12, 12, 0.422);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;        
+  position: relative;
+}
+
+/* ===== Left Side ===== */
+.resume-left {
+  width: 35%;
+  background:  #285e76;;
+  color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resume-right section  ul li {
+  color: #100f0f;
+}    
+
+.photo-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+
+.contact-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.languages,
+.skills {
+  width: 100%;
+}
+
+.bar-container {
   margin-bottom: 0.5rem;
 }
 
-.resume-item p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+.bar-container span {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
 }
 
-.resume-item ul {
-  list-style: disc;
-  margin-left: 1.5rem;
+.bars {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.skills-list {
-  list-style: none;
+.bar .fill {
+  width: 80%; /* static width for simplicity or add JS later for custom width */
+  height: 100%;
+  background: #fff;
+}
+
+.hobbies {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
+  gap: 5px;
+  margin-top: 0.5rem;
 }
 
-.skills-list li {
-  background: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+.hobby-icon {
+  font-size: 1.2rem;
 }
 
-/* Ensure the container takes up the full viewport */
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Space between navbar, content, and footer */
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  width: 100%;
-  position: relative;
-  background: #f5f5f5; /* Light background color */
-  box-sizing: border-box;
-}
-
-/* Navbar styling */
-.navbar {
-  position: fixed; /* Fix the navbar at the top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #1a1a1a; /* Dark background */
-  color: #ffffff; /* White text */
-  padding: 1rem;
-  z-index: 1000; /* Ensure it stays above other elements */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-}
-
-/* Footer styling */
-.footer {
-  position: fixed; /* Fix the footer at the bottom */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #1a1a1a; /* Dark background */
-  color: #ffffff; /* White text */
-  text-align: center;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  z-index: 1000; /* Ensure it stays above other elements */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
-}
-
-/* Templates grid styling */
-.templates-section {
-  flex: 1; /* Allow the templates section to grow and fill available space */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* ===== Right Side ===== */
+.resume-right {
+  width: 65%;
   padding: 2rem;
-  overflow-y: auto; /* Allow scrolling within the templates section if needed */
+  background: #8fc9c9;
 }
 
-.templates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
+.header h1 {
+  font-size: 2rem;
+  color: #2e4053;
 }
 
-.template-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-.template-card:hover {
-  transform: translateY(-5px);
-}
-
-.template-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
+.header h2 {
+  font-size: 1.2rem;
+  color: #5d6d7e;
   margin-bottom: 1rem;
 }
 
-.select-button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.section {
+  margin-top: 1.5rem;
 }
 
-.select-button:hover {
-  background-color: #0056b3;
+.section h3 {
+  color: #2e4053;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.section p,
+.section ul {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.section ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+.section ul li {
+  margin-bottom: 0.4rem;
+}
+.print-buttons {
+  display: flex;
+  flex-direction: column;   /* Stack buttons vertically */
+  gap: 5px;   
+  padding: 5px 14px;             /* Space between buttons */
+  margin-bottom: 14px;
+  justify-content: flex-end;
+  align-items: flex-end;    /* Align buttons to the right */
+}
+
+.print-buttons .modern-btn {
+  background: #22223b;
+  color: #fff;
+  border: none;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s;
+  min-width: 120px;
+}
+
+.print-buttons .modern-btn:last-child {
+  background: #000;
+  color: #fff;
+}
+
+/* Hide print & edit buttons when printing */
+@media print {
+  .resume-preview {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    page-break-after: always;
+  }
+  body {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
 }

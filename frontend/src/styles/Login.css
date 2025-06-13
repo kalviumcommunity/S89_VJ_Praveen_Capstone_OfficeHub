@@ -1,128 +1,97 @@
-.login-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh;
-  background: url('https://i.pinimg.com/736x/4e/05/55/4e0555588bb0609ea5745415efed8492.jpg'); /* Light background */
-  background-size: cover; /* Cover the entire container */
-  padding: 2rem; 
-  
-}
+/* ...existing styles... */
 
-.login-form {
-  background: url('https://i.pinimg.com/736x/c5/d3/96/c5d39673421676a6a0faff0a6893564e.jpg');
-  background-size: cover;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  height: 500px; /* Increased height */
-  text-align: center;
-  margin-left: 29rem;
-}
-
-.login-form h2 {
-  margin-bottom: 1.5rem;
-  color: #333333;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #555555;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: #007bff; /* Blue border on focus */
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-.login-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #0056b3;
-}
-
-.signup-link {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.signup-link a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
-}
-
-.or-divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.or-divider::before,
-.or-divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid #ccc;
-}
-
-.or-divider span {
-  padding: 0 10px;
-  color: #777;
-  font-size: 14px;
-}
-
-.google-signin-button {
+.openpage-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 10px;
-  background-color: #fff;
-  color: #757575;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.google-signin-button:hover {
-  background-color: #f1f1f1;
+.openpage-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: 
+    linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), /* much less white overlay */
+    url('https://i.pinimg.com/736x/27/d2/1b/27d21bb7f8ceedcf41e4f4d31ee0795e.jpg') center center/cover no-repeat;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Adjust input and button styles for visibility */
+.login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+
+.login-button,
+.google-signin-button {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-button {
+  background: #0369d6;
+  color: #fff;
+}
+
+.google-signin-button {
+  background: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .google-icon {
-  margin-right: 10px;
-  font-size: 18px;
+  margin-right: 8px;
+}
+
+.or-divider {
+  text-align: center;
+  color: #ccc;
+  margin: 1rem 0;
+}
+
+.signup-link {
+  text-align: center;
+  color: #fff;
 }

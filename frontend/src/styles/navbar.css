@@ -18,8 +18,9 @@
 }
 
 .navbar-logo{
-  margin-top: -5rem;
-  margin-bottom: -7rem; /* Adjust logo position */
+  margin-top: -7rem;
+  margin-bottom: -7rem;
+  margin-left: -1rem; /* Adjust logo position */
 }
 
 .navbar-links {
