@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/shoe.css'; 
 import Navbar from '../components/Navbar';
 
@@ -11,6 +12,7 @@ const ShoePage = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchShoes = async () => {
@@ -33,7 +35,7 @@ const ShoePage = () => {
 
     fetchShoes();
   }, []);
-
+  
   const handleBrandFilter = (brand) => {
     setSelectedBrand(brand);
     if (brand === '') {
@@ -43,11 +45,42 @@ const ShoePage = () => {
     }
   };
 
-  const toggleFavorite = (id) => {
-    setFavorites(prev =>
-      prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]
-    );
+  // Store full shoe object in localStorage for favorites
+  const toggleFavorite = (shoe) => {
+    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
+    const exists = stored.find(fav => fav.id === shoe.id);
+
+    let updated;
+    if (exists) {
+      updated = stored.filter(fav => fav.id !== shoe.id);
+    } else {
+      updated = [...stored, shoe];
+    }
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavorites(updated.map(fav => fav.id));
   };
+
+  // Add to cart and redirect to cart page
+  const addToCart = (shoe) => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const exists = storedCart.find(item => item.id === shoe.id);
+    let updatedCart;
+    if (exists) {
+      updatedCart = storedCart.map(item =>
+        item.id === shoe.id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+      );
+    } else {
+      updatedCart = [...storedCart, { ...shoe, quantity: 1 }];
+    }
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    // Redirect to cart page
+    window.location.href = '/cart';
+  };
+
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(favs.map(fav => fav.id));
+  }, []);
 
   return (
     <div className="shoe-page-container">
@@ -85,11 +118,12 @@ const ShoePage = () => {
               <div
                 key={shoe.id}
                 className="shoe-card"
-                style={{ position: 'relative' }}
+                style={{ position: 'relative', cursor: 'pointer' }}
+                onClick={() => navigate(`/item/shoe/${shoe.id}`)}
               >
                 <div
                   className="favorite-toggle"
-                  onClick={() => toggleFavorite(shoe.id)}
+                  onClick={e => { e.stopPropagation(); toggleFavorite(shoe); }}
                   title="Toggle Favorite"
                 >
                   {favorites.includes(shoe.id) ? '❤️' : '🤍'}
@@ -98,7 +132,12 @@ const ShoePage = () => {
                 <h3>{shoe.name}</h3>
                 <p>{shoe.description}</p>
                 <p><strong>${shoe.price}</strong></p>
-                <button className="add-to-cart-button">Add to Cart</button>
+                <button
+                  className="add-to-cart-button"
+                  onClick={e => { e.stopPropagation(); addToCart(shoe); }}
+                >
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

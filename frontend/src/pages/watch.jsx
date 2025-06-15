@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/watch.css';
 import Navbar from '../components/Navbar';
 
@@ -8,6 +9,7 @@ const WatchPage = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchWatches = async () => {
@@ -24,12 +26,41 @@ const WatchPage = () => {
     fetchWatches();
   }, []);
 
-  const toggleFavorite = (id) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.includes(id)
-        ? prevFavorites.filter((favId) => favId !== id)
-        : [...prevFavorites, id]
-    );
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(favs.map(fav => fav.id));
+  }, []);
+
+  // Store full watch object in localStorage for favorites
+  const toggleFavorite = (watch) => {
+    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
+    const exists = stored.find(fav => fav.id === watch.id);
+
+    let updated;
+    if (exists) {
+      updated = stored.filter(fav => fav.id !== watch.id);
+    } else {
+      updated = [...stored, watch];
+    }
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavorites(updated.map(fav => fav.id));
+  };
+
+  // Add to cart and redirect to cart page
+  const addToCart = (watch) => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const exists = storedCart.find(item => item.id === watch.id);
+    let updatedCart;
+    if (exists) {
+      updatedCart = storedCart.map(item =>
+        item.id === watch.id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+      );
+    } else {
+      updatedCart = [...storedCart, { ...watch, quantity: 1 }];
+    }
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    // Redirect to cart page
+    window.location.href = '/cart';
   };
 
   return (
@@ -41,10 +72,15 @@ const WatchPage = () => {
 
       <div className="watches-grid">
         {watches.map((watch) => (
-          <div key={watch.id} className="watch-card" style={{ position: 'relative' }}>
+          <div
+            key={watch.id}
+            className="watch-card"
+            style={{ position: 'relative', cursor: 'pointer' }}
+            onClick={() => navigate(`/item/watch/${watch.id}`)}
+          >
             <div
               className="favorite-toggle"
-              onClick={() => toggleFavorite(watch.id)}
+              onClick={e => { e.stopPropagation(); toggleFavorite(watch); }}
               title="Toggle Favorite"
             >
               {favorites.includes(watch.id) ? '❤️' : '🤍'}
@@ -53,7 +89,12 @@ const WatchPage = () => {
             <h3>{watch.name}</h3>
             <p>{watch.description}</p>
             <p><strong>${watch.price}</strong></p>
-            <button className="add-to-cart-button">Add to Cart</button>
+            <button
+              className="add-to-cart-button"
+              onClick={e => { e.stopPropagation(); addToCart(watch); }}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>

@@ -1,4 +1,9 @@
-/* Ensure the home container takes up the full viewport */
+/* Remove default margin/padding from body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -8,13 +13,14 @@
   width: 100%;
   position: relative; /* Set position to relative for overlay */
   color: #516c7a; /* White text for contrast */
-  padding-top: 4rem; /* Add space for the fixed navbar */
+  padding-top: 100px; /* Match the navbar height */
   box-sizing: border-box; /* Include padding in height calculation */
+  margin-top: -6.5rem;
 }
 
 /* Add an overlay to decrease opacity */
 .home-container::before {
-  background: url('https://i.pinimg.com/736x/59/1e/40/591e401234f0092ab1a5079e75cd9bbf.jpg');
+  background: url('https://i.pinimg.com/736x/54/8a/94/548a9446be37be6b7ea3ee773b3d5652.jpg');
   background-size: cover; /* Cover the entire container */
   content: '';
   position: absolute;
@@ -29,7 +35,7 @@
 /* Ensure content is above the overlay */
 .home-container > * {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Styling for the logo */
@@ -39,7 +45,7 @@
   margin-bottom: 1rem; /* Add spacing below the logo */
   border-radius: 0px; /* Optional: Add rounded corners */
   background: transparent;
-  margin-top: -5rem; /* Adjust spacing from the top */
+  margin-top: 3rem; /* Adjust spacing from the top */
  /* Add a subtle shadow */
 }
 
@@ -52,7 +58,7 @@
 
 .home-header h1 {
   font-size: 2.5rem; /* Adjust font size */
-  color: #6a89cc; /* Grey-blue color for the heading */
+  color: #000207; /* Grey-blue color for the heading */
   margin-bottom: 1rem; /* Add spacing below the heading */
 }
 
@@ -104,7 +110,7 @@
 .home-link {
   display: inline-block;
   padding: 0.5rem 1rem; /* Adjusted padding for button */
-  background-color: #007bff; /* Blue button */
+  background-color: #111112; /* Blue button */
   color: #ffffff; /* White text */
   text-decoration: none;
   border-radius: 4px;
@@ -112,12 +118,12 @@
 }
 
 .home-link:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #424343; /* Darker blue on hover */
 }
 
 /* Specific styling for the Portfolio card */
 .home-card.portfolio-card {
-  background: url('https://img.freepik.com/free-vector/ripped-notes-rectangle-frame-background_53876-99423.jpg?semt=ais_hybrid&w=740') no-repeat center center; /* Set the background image */
+  background: url('https://i.pinimg.com/736x/b3/28/ac/b328ac1a0459614a20774569f7847c1e.jpg') no-repeat center center; /* Set the background image */
   background-size: cover; /* Cover the entire card */
   color: #333; /* Dark text for better contrast */
   border: none; /* Remove the border */
@@ -137,7 +143,7 @@
 
 /* Specific styling for the Resume card */
 .home-card.resume-card {
-  background: url('https://i.pinimg.com/736x/3f/57/dc/3f57dc3548bb3e485a720d60f3071ab5.jpg') no-repeat center center; /* Set the background image */
+  background: url('https://i.pinimg.com/736x/c9/9a/83/c99a832a5fb398852561911e61225f66.jpg') no-repeat center center; /* Set the background image */
   background-size: 100% 100%; /* Ensure the image fits the card dimensions */
   color: #ffffff; /* White text for better contrast */
   border: 2px solid #000000; /* Add a black border */
@@ -148,7 +154,9 @@
   align-items: center;
   text-align: center;
 }
-
+.home-card.resume-card h2 {
+  color: black; /* Black text for the title */
+}
 /* Specific styling for the E-commerce card */
 .home-card.ecommerce-card {
   background: url('https://i.pinimg.com/736x/41/5b/ea/415beaa3279e4e369a0ed5d0a1034c49.jpg') no-repeat center center; /* Set the background image */
@@ -165,15 +173,31 @@
 
 /* Navbar styling */
 .navbar {
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Position it at the top of the page */
-  left: 0; /* Align it to the left */
-  width: 100%; /* Make it span the full width of the page */
-  z-index: 1000; /* Ensure it stays above other elements */
-  background-color: #1a1a1a; /* Add a background color */
-  color: #ffffff; /* White text */
-  padding: 1rem; /* Add padding for spacing */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  position: fixed;
+  top: 0; /* Ensure it's at the very top */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 1rem 0; /* Remove margin-top here */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0 !important;
+  height: 100px; /* Set a fixed height for the navbar */
 }
 
+/* Increase the size of resume, portfolio, and ecommerce cards */
+.resume-card,
+.portfolio-card,
+.ecommerce-card {
+  width: 390px;
+  min-height: 300px;
+  padding: 2.2rem 1.7rem;
+  font-size: 1.15rem;
+  box-sizing: border-box;
+  margin: 01rem auto;
+}
 
+.home-card.portfolio-card h2{
+  color: black;
+}

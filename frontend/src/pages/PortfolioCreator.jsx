@@ -1,6 +1,8 @@
 import { useState } from "react";
 import '../styles/PortfolioCreator.css';
 import bak from '../../../images/port.mp4';
+import React from 'react';
+import Navbar from '../components/Navbar';
 
 export default function PortfolioBuilder() {
   const [form, setForm] = useState({
@@ -72,6 +74,7 @@ Skills: ${form.skills}
         />
       )}
       <div className="portfolio-container">
+        <Navbar />
         {!showPortfolio ? (
           <>
             <h1>Build Your portfolio</h1>
@@ -93,7 +96,7 @@ Skills: ${form.skills}
             </div>
             <div className="form-group">
               <label>Profile Summary</label>
-              <textarea name="summary" placeholder="A brief summary about you" value={form.summary} onChange={handleChange} rows={3} />
+              <textarea  name="summary" placeholder="A brief summary about you" value={form.summary} onChange={handleChange} rows={3} />
             </div>
             <div className="form-group">
               <label>Languages (comma separated)</label>

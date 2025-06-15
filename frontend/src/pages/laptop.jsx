@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/laptop.css'; 
 import Navbar from '../components/Navbar';
 
@@ -11,6 +12,7 @@ const LaptopPage = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLaptops = async () => {
@@ -34,6 +36,11 @@ const LaptopPage = () => {
     fetchLaptops();
   }, []);
 
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(favs.map(fav => fav.id));
+  }, []);
+
   const handleBrandFilter = (brand) => {
     setSelectedBrand(brand);
     if (brand === '') {
@@ -43,10 +50,33 @@ const LaptopPage = () => {
     }
   };
 
-  const toggleFavorite = (id) => {
-    setFavorites(prev =>
-      prev.includes(id) ? prev.filter(fav => fav !== id) : [...prev, id]
-    );
+  const toggleFavorite = (laptop) => {
+    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
+    const exists = stored.find(fav => fav.id === laptop.id);
+
+    let updated;
+    if (exists) {
+      updated = stored.filter(fav => fav.id !== laptop.id);
+    } else {
+      updated = [...stored, laptop];
+    }
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavorites(updated.map(fav => fav.id));
+  };
+
+  const addToCart = (laptop) => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const exists = storedCart.find(item => item.id === laptop.id);
+    let updatedCart;
+    if (exists) {
+      updatedCart = storedCart.map(item =>
+        item.id === laptop.id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+      );
+    } else {
+      updatedCart = [...storedCart, { ...laptop, quantity: 1 }];
+    }
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.location.href = '/cart';
   };
 
   return (
@@ -83,10 +113,15 @@ const LaptopPage = () => {
         <div className="laptop-content">
           <div className="laptop-grid">
             {filteredLaptops.map((laptop) => (
-              <div key={laptop.id} className="laptop-card" style={{position: 'relative'}}>
+              <div
+                key={laptop.id}
+                className="laptop-card"
+                style={{position: 'relative', cursor: 'pointer'}}
+                onClick={() => navigate(`/item/laptop/${laptop.id}`)}
+              >
                 <div
                   className="favorite-toggle"
-                  onClick={() => toggleFavorite(laptop.id)}
+                  onClick={e => { e.stopPropagation(); toggleFavorite(laptop); }}
                   title="Toggle Favorite"
                 >
                   {favorites.includes(laptop.id) ? '❤️' : '🤍'}
@@ -99,7 +134,12 @@ const LaptopPage = () => {
                 <h3>{laptop.name}</h3>
                 <p>{laptop.description}</p>
                 <p><strong>${laptop.price}</strong></p>
-                <button className="add-to-cart-button">Add to Cart</button>
+                <button
+                  className="add-to-cart-button"
+                  onClick={e => { e.stopPropagation(); addToCart(laptop); }}
+                >
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

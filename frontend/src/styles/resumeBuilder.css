@@ -31,6 +31,7 @@ body, html {
   padding: 1rem;
   z-index: 1000; /* Ensure it stays above other elements */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  height: 5rem /* Fixed height for the navbar */
 }
 
 /* Footer styling */

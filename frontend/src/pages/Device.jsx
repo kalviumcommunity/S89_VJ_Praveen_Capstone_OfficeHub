@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/Device.css';
 import Navbar from '../components/Navbar';
 
@@ -12,6 +13,7 @@ const DevicePage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDevice = async () => {
@@ -29,10 +31,38 @@ const DevicePage = () => {
     fetchDevice();
   }, []);
 
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
-    );
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(favs.map(fav => fav.id));
+  }, []);
+
+  const toggleFavorite = (device) => {
+    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
+    const exists = stored.find((fav) => fav.id === device.id);
+
+    let updated;
+    if (exists) {
+      updated = stored.filter((fav) => fav.id !== device.id);
+    } else {
+      updated = [...stored, device];
+    }
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavorites(updated.map((fav) => fav.id));
+  };
+
+  const addToCart = (device) => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const exists = storedCart.find(item => item.id === device.id);
+    let updatedCart;
+    if (exists) {
+      updatedCart = storedCart.map(item =>
+        item.id === device.id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+      );
+    } else {
+      updatedCart = [...storedCart, { ...device, quantity: 1 }];
+    }
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.location.href = '/cart';
   };
 
   const handleCategoryFilter = (category) => {
@@ -40,7 +70,7 @@ const DevicePage = () => {
     if (category === '') {
       setFilteredDevices(devices);
     } else {
-      setFilteredDevices(devices.filter((d) => d.brannd.toLowerCase() === category.toLowerCase()));
+      setFilteredDevices(devices.filter((d) => d.brand && d.brand.toLowerCase() === category.toLowerCase()));
     }
   };
 
@@ -78,10 +108,15 @@ const DevicePage = () => {
 
           <div className="device-grid">
             {filteredDevices.map((device) => (
-              <div key={device.id} className="device-card">
+              <div
+                key={device.id}
+                className="device-card"
+                style={{ cursor: 'pointer', position: 'relative' }}
+                onClick={() => navigate(`/item/device/${device.id}`)}
+              >
                 <div
                   className="favorite-toggle"
-                  onClick={() => toggleFavorite(device.id)}
+                  onClick={e => { e.stopPropagation(); toggleFavorite(device); }}
                   title="Toggle Favorite"
                 >
                   {favorites.includes(device.id) ? '❤️' : '🤍'}
@@ -90,7 +125,12 @@ const DevicePage = () => {
                 <h3>{device.name}</h3>
                 <p>{device.description}</p>
                 <strong>${device.price}</strong>
-                <button className="add-to-cart-button">Add to Cart</button>
+                <button
+                  className="add-to-cart-button"
+                  onClick={e => { e.stopPropagation(); addToCart(device); }}
+                >
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

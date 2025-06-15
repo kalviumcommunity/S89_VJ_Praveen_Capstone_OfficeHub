@@ -1,51 +1,107 @@
-.favorites-list {
-  display: flex;
-  flex-wrap: wrap;
+/* Premium Card Grid */
+.favorites-list, .device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
+  padding: 2rem 0;
 }
 
-.favorites-list .product-card {
-  background: #222;
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  padding: 1.5rem;
-  width: 260px;
-  transition: transform 0.2s, box-shadow 0.2s;
+/* Premium Card Style */
+.device-card, .product-card, .favorite-card {
+  background: linear-gradient(135deg, #f8fafc 60%, #e0f7fa 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(15, 190, 221, 0.10), 0 1.5px 6px rgba(31,44,71,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
 }
 
-.favorites-list .product-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+.device-card:hover, .product-card:hover, .favorite-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(15, 190, 221, 0.18), 0 2px 12px rgba(31,44,71,0.12);
 }
 
-.favorites-list .product-card .favorite-icon {
-  font-size: 1.7rem;
-  color: #e25555;
-  cursor: pointer;
-  float: right;
+/* Premium Image Style */
+.device-image, .product-image, .favorite-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 0.8rem;
+  margin-bottom: 1.2rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 190, 221, 0.08);
 }
 
-.favorites-list .product-card .favorite-icon.inactive {
-  color: #aaa;
+/* Premium Title */
+.device-card h3, .product-card h3, .favorite-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2c47;
+  margin: 0.5rem 0 0.3rem 0;
+  letter-spacing: 0.5px;
 }
 
-.favorites-list .product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.favorites-list .product-card h3 {
-  margin: 0.5rem 0 0.2rem 0;
-  font-size: 1.2rem;
-}
-
-.favorites-list .product-card p {
+/* Premium Description */
+.device-card p, .product-card p, .favorite-card p {
+  color: #444;
   font-size: 1rem;
   margin: 0.2rem 0;
+  text-align: center;
+}
+
+/* Premium Price */
+.device-card strong, .product-card strong, .favorite-card strong {
+  color: #0fbedd;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Premium Favorite Icon */
+.favorite-icon, .favorite-toggle {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 1.7rem;
+  color: #ff3c6f;
+  cursor: pointer;
+  transition: transform 0.15s;
+  z-index: 2;
+}
+.favorite-icon:hover, .favorite-toggle:hover {
+  transform: scale(1.18);
+  color: #e6004c;
+}
+
+/* Premium Remove Button */
+.remove-favorite-button {
+  background: linear-gradient(90deg, #ff3c6f 60%, #ffb199 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(255,60,111,0.08);
+  transition: background 0.18s;
+}
+.remove-favorite-button:hover {
+  background: linear-gradient(90deg, #e6004c 60%, #ffb199 100%);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .favorites-list, .device-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1rem 0;
+  }
+  .device-card, .product-card, .favorite-card {
+    padding: 1.2rem 0.7rem;
+  }
 }

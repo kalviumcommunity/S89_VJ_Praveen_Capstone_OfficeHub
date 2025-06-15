@@ -14,12 +14,14 @@
   object-fit: cover;
   pointer-events: none;
 }
-
+.form-group summary{
+  width: 500rem;
+}
 .portfolio-container {
   width: 790px;
   margin: 0 auto;
   padding: 2rem;
-
+  margin-top: 5rem;
   border-radius: 8px;
   
   z-index: 1;

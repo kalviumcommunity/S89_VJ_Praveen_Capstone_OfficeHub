@@ -28,7 +28,6 @@ const shoeSchema = new mongoose.Schema(commonField);
 
 // Perfumes Schema
 const perfumeSchema = new mongoose.Schema(commonFields);
-
 // Watches Schema
 const watchSchema = new mongoose.Schema(commonFields);
 const StationarySchema = new mongoose.Schema(commonFields);

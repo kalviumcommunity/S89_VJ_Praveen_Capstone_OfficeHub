@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/Ecommerce.css';
-import { FaHeart, FaShoppingCart } from 'react-icons/fa'; // Import icons
-import { Link } from 'react-router-dom'; // For navigation
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Ecommerce = () => {
   const categories = [
@@ -17,39 +17,40 @@ const Ecommerce = () => {
   ];
 
   return (
-    <div className="ecommerce-container" style={{ position: 'relative' }}>
+    <div className="ecommerce-container">
       <Navbar />
-      {/* Top right icons */}
-      <div className="ecom-icons-topright">
-        <Link to="/favorites" className="icon-link" title="Favorites">
-          <FaHeart />
-        </Link>
-        <Link to="/cart" className="icon-link" title="Cart">
-          <FaShoppingCart />
-        </Link>
-      </div>
-      <header className="ecommerce-header">
-        <h1>OFFICE THINGS</h1>
-        <p>Explore a variety of office essentials and shop for what you need.</p>
-      </header>
-      <section className="categories-section">
-        <h2>Categories</h2>
-        <div className="categories-grid">
-          {categories.map((category) => (
-            <div key={category.id} className="category-card">
-              <img src={category.image} alt={category.name} className="category-image" />
-              <h3>{category.name}</h3>
-              {category.link ? (
-                <a href={category.link} className="explore-button">
-                  Explore
-                </a>
-              ) : (
-                <button className="explore-button">Explore</button>
-              )}
-            </div>
-          ))}
+      <div className="after-navbar-content">
+        <div className="ecom-icons-below-navbar">
+          <Link to="/favorites" className="icon-link heart-link" title="Favorites">
+            <FaHeart />
+          </Link>
+          <Link to="/cart" className="icon-link cart-link" title="Cart">
+            <FaShoppingCart />
+          </Link>
         </div>
-      </section>
+        <header className="ecommerce-header">
+          <h1>OFFICE THINGS</h1>
+          <p>Explore a variety of office essentials and shop for what you need.</p>
+        </header>
+        <section className="categories-section">
+          <h2>Categories</h2>
+          <div className="categories-grid">
+            {categories.map((category) => (
+              <div key={category.id} className="category-card">
+                <img src={category.image} alt={category.name} className="category-image" />
+                <h3>{category.name}</h3>
+                {category.link ? (
+                  <a href={category.link} className="explore-button">
+                    Explore
+                  </a>
+                ) : (
+                  <button className="explore-button">Explore</button>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

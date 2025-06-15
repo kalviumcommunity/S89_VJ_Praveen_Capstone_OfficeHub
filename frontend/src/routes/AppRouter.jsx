@@ -15,14 +15,15 @@ import ShoePage from '../pages/shoe';
 import ProfessionalResume from '../pages/ProfessionalResume';
 import LaptopPage from '../pages/laptop'; 
 import PerfumePage from '../pages/perfume'; // Import the Perfume component
-// import CartPage from '../pages/Cart';
+import CartPage from '../pages/Cart';
 import DevicePage from '../pages/Device';
 import StationaryPage from '../pages/Stationary';
 import AccessoryPage from '../pages/Accessory';
 import OpenPage from '../pages/openPage';
 import ClassicResume from '../pages/ClassicResume';
 import CreativeResume from '../pages/CreativeResume';
-// import FavoritesPage from '../components/FavoritesPage';
+import FavoritesPage from '../pages/FavoritesPage';
+import ItemDetail from '../pages/ItemDetail';
 
 
 const AppRouter = () => {
@@ -45,13 +46,13 @@ const AppRouter = () => {
           <Route path='/laptop' element={<LaptopPage />} />
           <Route path='/shoe' element={<ShoePage />} />
           <Route path='/perfume' element={<PerfumePage />} />
-          {/* <Route path='/cart' element={<CartPage />} /> */}
+          <Route path='/cart' element={<CartPage />} />
           <Route path='/devices' element={<DevicePage />} />
-          {/* <Route path='/favorites' element={<FavoritePage />} /> */}
+          <Route path='/favorites' element={<FavoritesPage />} />
           <Route path='/Accessory' element={<AccessoryPage />} />
           <Route path='/Stationary' element={<StationaryPage />} />
           <Route path='/creative-resume' element={<CreativeResume />} />
-          {/* <Route path='/favorites' element={<FavoritesPage />} /> */}
+          <Route path="/item/:type/:id" element={<ItemDetail />} />
           
           
           {/* Add more routes as needed */}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/accessory.css'; 
 import Navbar from '../components/Navbar';
 
@@ -8,6 +9,7 @@ const AccessoryPage = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAccessories = async () => {
@@ -24,10 +26,40 @@ const AccessoryPage = () => {
     fetchAccessories();
   }, []);
 
-  const toggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
-    );
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+    setFavorites(favs.map(fav => fav.id));
+  }, []);
+
+  // Store full accessory object in localStorage for favorites
+  const toggleFavorite = (item) => {
+    const stored = JSON.parse(localStorage.getItem('favorites')) || [];
+    const exists = stored.find(fav => fav.id === item.id);
+
+    let updated;
+    if (exists) {
+      updated = stored.filter(fav => fav.id !== item.id);
+    } else {
+      updated = [...stored, item];
+    }
+    localStorage.setItem('favorites', JSON.stringify(updated));
+    setFavorites(updated.map(fav => fav.id));
+  };
+
+  // Add to cart and redirect to cart page
+  const addToCart = (item) => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const exists = storedCart.find(cartItem => cartItem.id === item.id);
+    let updatedCart;
+    if (exists) {
+      updatedCart = storedCart.map(cartItem =>
+        cartItem.id === item.id ? { ...cartItem, quantity: (cartItem.quantity || 1) + 1 } : cartItem
+      );
+    } else {
+      updatedCart = [...storedCart, { ...item, quantity: 1 }];
+    }
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.location.href = '/cart';
   };
 
   return (
@@ -39,10 +71,15 @@ const AccessoryPage = () => {
 
       <div className="accessory-grid">
         {accessories.map((item) => (
-          <div key={item.id} className="accessory-card" style={{ position: 'relative' }}>
+          <div
+            key={item.id}
+            className="accessory-card"
+            style={{ position: 'relative', cursor: 'pointer' }}
+            onClick={() => navigate(`/item/accessory/${item.id}`)}
+          >
             <div
               className="favorite-toggle"
-              onClick={() => toggleFavorite(item.id)}
+              onClick={e => { e.stopPropagation(); toggleFavorite(item); }}
               title="Toggle Favorite"
             >
               {favorites.includes(item.id) ? '❤️' : '🤍'}
@@ -51,7 +88,12 @@ const AccessoryPage = () => {
             <h3>{item.name}</h3>
             <p>{item.description}</p>
             <p><strong>${item.price}</strong></p>
-            <button className="add-to-cart-button">Add to Cart</button>
+            <button
+              className="add-to-cart-button"
+              onClick={e => { e.stopPropagation(); addToCart(item); }}
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>
