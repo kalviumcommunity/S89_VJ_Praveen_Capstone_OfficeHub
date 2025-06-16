@@ -7,6 +7,8 @@ const App = () => {
       <AppRoutes />
     </div>
   );
+
+  
 };
 
 
