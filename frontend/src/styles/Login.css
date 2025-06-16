@@ -32,8 +32,8 @@
   flex-direction: column;
   align-items: center;
   background: 
-    linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)), /* much less white overlay */
-    url('https://images.pexels.com/photos/9115550/pexels-photo-9115550.png?auto=compress&cs=tinysrgb&w=600&lazy=load') center center/cover no-repeat;
+    /* much less white overlay */
+    url('https://i.pinimg.com/736x/3f/38/2f/3f382fe2f0df212049afff6d99a97e74.jpg') center center/cover no-repeat;
 }
 
 .login-form {

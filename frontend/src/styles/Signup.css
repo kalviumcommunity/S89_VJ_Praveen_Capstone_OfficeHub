@@ -25,10 +25,13 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  
 }
-
+.login-container h2 {
+  color:rgb(246, 245, 243)
+}
 .signup-form {
-  background: rgba(5, 3, 3, 0.85); /* semi-transparent white */
+  background-image: url('https://i.pinimg.com/736x/3f/38/2f/3f382fe2f0df212049afff6d99a97e74.jpg'); /* semi-transparent white */
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.2);
@@ -38,10 +41,10 @@
   margin-top: 4rem;
   margin-left: 25rem;
 }
-
 .form-group {
   margin-bottom: 1rem;
   text-align: left;
+  color: #f1ecec;
 }
 
 .form-group label {
