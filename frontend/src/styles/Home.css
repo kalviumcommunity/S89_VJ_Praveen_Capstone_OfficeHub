@@ -1,0 +1,203 @@
+/* Remove default margin/padding from body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between navbar, content, and footer */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  position: relative; /* Set position to relative for overlay */
+  color: #516c7a; /* White text for contrast */
+  padding-top: 100px; /* Match the navbar height */
+  box-sizing: border-box; /* Include padding in height calculation */
+  margin-top: -6.5rem;
+}
+
+/* Add an overlay to decrease opacity */
+.home-container::before {
+  background: url('https://i.pinimg.com/736x/54/8a/94/548a9446be37be6b7ea3ee773b3d5652.jpg');
+  background-size: cover; /* Cover the entire container */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Place the overlay below the content */
+}
+
+/* Ensure content is above the overlay */
+.home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Styling for the logo */
+.home-logo {
+  width: 340px; /* Adjust the width of the logo */
+  height: 120px; /* Maintain aspect ratio */
+  margin-bottom: 1rem; /* Add spacing below the logo */
+  border-radius: 0px; /* Optional: Add rounded corners */
+  background: transparent;
+  margin-top: 3rem; /* Adjust spacing from the top */
+ /* Add a subtle shadow */
+}
+
+/* Styling for the header */
+.home-header {
+  text-align: center; /* Center align the content */
+  margin-top: 7rem; /* Adjust spacing from the top */
+  color: #3c3b3b; /* Text color */
+}
+
+.home-header h1 {
+  font-size: 2.5rem; /* Adjust font size */
+  color: #000207; /* Grey-blue color for the heading */
+  margin-bottom: 1rem; /* Add spacing below the heading */
+}
+
+.home-header p {
+  font-size: 1.2rem; /* Adjust font size for the description */
+  color: #666666; /* Subtle grey color */
+  margin-bottom: 2rem; /* Add spacing below the description */
+}
+
+.home-sections {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center cards vertically */
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%; /* Take full height of the container */
+}
+
+.home-card {
+  background: rgba(26, 26, 26, 0.8); /* Semi-transparent dark background for cards */
+  border: 2px solid #000000; /* Add a black border */
+  border-radius: 8px; /* Keep the rounded corners */
+  padding: 2rem; /* Increased padding for larger box size */
+  width: 300px; /* Adjusted width of the card */
+  height: 200px; /* Adjusted height of the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out;
+  text-align: center; /* Center text inside the card */
+}
+
+.home-card:hover {
+  transform: translateY(-5px);
+}
+
+.home-card h2 {
+  font-size: 1.5rem; /* Adjusted font size for card title */
+  color: #ffffff; /* White text */
+  margin-bottom: 1rem;
+}
+
+
+.home-card p {
+  font-size: 1rem; /* Adjusted font size for card text */
+  color: #cccccc; /* Light gray text */
+  margin-bottom: 1rem;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 0.5rem 1rem; /* Adjusted padding for button */
+  background-color: #111112; /* Blue button */
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem; /* Adjusted font size for button text */
+}
+
+.home-link:hover {
+  background-color: #424343; /* Darker blue on hover */
+}
+
+/* Specific styling for the Portfolio card */
+.home-card.portfolio-card {
+  background: url('https://i.pinimg.com/736x/b3/28/ac/b328ac1a0459614a20774569f7847c1e.jpg') no-repeat center center; /* Set the background image */
+  background-size: cover; /* Cover the entire card */
+  color: #333; /* Dark text for better contrast */
+  border: none; /* Remove the border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+}
+
+.home-card.portfolio-card .home-link {
+  margin-top: 1rem; /* Add spacing above the button */
+  display: inline-block; /* Ensure the button is treated as a block element */
+  text-align: center; /* Center the text inside the button */
+}
+
+/* Specific styling for the Resume card */
+.home-card.resume-card {
+  background: url('https://i.pinimg.com/736x/c9/9a/83/c99a832a5fb398852561911e61225f66.jpg') no-repeat center center; /* Set the background image */
+  background-size: 100% 100%; /* Ensure the image fits the card dimensions */
+  color: #ffffff; /* White text for better contrast */
+  border: 2px solid #000000; /* Add a black border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.home-card.resume-card h2 {
+  color: black; /* Black text for the title */
+}
+/* Specific styling for the E-commerce card */
+.home-card.ecommerce-card {
+  background: url('https://i.pinimg.com/736x/41/5b/ea/415beaa3279e4e369a0ed5d0a1034c49.jpg') no-repeat center center; /* Set the background image */
+  background-size: 100% 100%; /* Ensure the image fits the card dimensions */
+  color: #ffffff; /* White text for better contrast */
+  border: 2px solid #000000; /* Add a black border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0; /* Ensure it's at the very top */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 1rem 0; /* Remove margin-top here */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 0 !important;
+  height: 100px; /* Set a fixed height for the navbar */
+}
+
+/* Increase the size of resume, portfolio, and ecommerce cards */
+.resume-card,
+.portfolio-card,
+.ecommerce-card {
+  width: 390px;
+  min-height: 300px;
+  padding: 2.2rem 1.7rem;
+  font-size: 1.15rem;
+  box-sizing: border-box;
+  margin: 01rem auto;
+}
+
+.home-card.portfolio-card h2{
+  color: black;
+}

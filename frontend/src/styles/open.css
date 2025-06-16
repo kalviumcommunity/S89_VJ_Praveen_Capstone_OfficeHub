@@ -1,0 +1,101 @@
+openpage-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE and Edge */
+}
+
+.openpage-container::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
+}
+
+.openpage-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.openpage-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: rgba(0,0,0,0.4); /* dark overlay for readability */
+  display: flex;
+  flex-direction: column;
+}
+
+.openpage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.openpage-content h1 {
+        color: #fff;
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 8px #000;
+}
+.openpage-content p{
+       color: #4facde;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px #000;
+}
+.openpage-login-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background: #090a0a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: -7rem;
+  width: 200px;
+  box-shadow: #fff 0px 0px 10px 2px;
+}
+
+.openpage-login-btn:hover {
+  background: #024a9e;
+}
+
+/* Hide scrollbars for the whole page */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE and Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
+}
+.openpage-image {
+  position: relative;
+  z-index: 3;
+  margin-top: -23rem;
+}
+
+.openpage-image img {
+  height: 480px !important;
+  width: 400px !important;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+.openpage-image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

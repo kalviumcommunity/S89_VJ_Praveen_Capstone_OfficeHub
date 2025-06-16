@@ -1,0 +1,131 @@
+/* Ensure the body and html do not scroll */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable scrolling */
+  height: 100%; /* Ensure the body takes up the full height */
+}
+
+/* Ensure the container takes up the full viewport */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between navbar, content, and footer */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  position: relative;
+  background: #eee8e8; /* Light background color */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrolling within the container */
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 1rem;
+  z-index: 1000; /* Ensure it stays above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  height: 5rem /* Fixed height for the navbar */
+}
+
+/* Footer styling */
+.footer {
+  position: fixed; /* Fix the footer at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff; /* White text */
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  z-index: 1000; /* Ensure it stays above other elements */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow above the footer */
+}
+
+/* Templates grid styling */
+.templates-section {
+  flex: 1; /* Allow the templates section to grow and fill available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden; /* Disable scrolling within the templates section */
+}
+
+.templates-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0c0c0c;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.template-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Arrange content vertically */
+  justify-content: space-between; /* Push content to the top and bottom */
+  height: 100%; /* Ensure the card takes full height */
+}
+
+.template-card:hover {
+  transform: translateY(-5px);
+}
+
+.template-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: auto; /* Push the image to the top */
+}
+
+.template-card h3 {
+  font-size: 1.2rem;
+  color: #121111; /* Black text color */
+  margin-bottom: 0.5rem;
+  margin-top: auto; /* Push the name to the bottom */
+}
+
+.select-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem; /* Add spacing between the name and button */
+}
+
+.select-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the Resume Builder name */
+.home-header-resume  h1 {
+  font-size: 2.5rem; /* Adjust font size if needed */
+  color: #558eb7f0; /* Light gold color */
+  text-align: center;
+  margin-bottom: 1rem;
+  
+}

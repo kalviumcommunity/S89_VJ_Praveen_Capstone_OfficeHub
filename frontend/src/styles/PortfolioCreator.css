@@ -1,0 +1,274 @@
+.portfolio-bg-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.portfolio-bg-video {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+.form-group summary{
+  width: 500rem;
+}
+.portfolio-container {
+  width: 790px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 5rem;
+  border-radius: 8px;
+  
+  z-index: 1;
+}
+
+.portfolio-container h1 {
+  text-align: center;
+  color: #1f2c47;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
+
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1f2c47;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #253a64;
+}
+
+/* --- Portfolio Generated Section --- */
+.portfolio-generated {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 3rem auto;
+  position: relative;
+  z-index: 2;
+  border-radius: 1.2rem;
+  
+}
+
+/* --- Hero Section Inspired by the Image --- */
+.portfolio-hero-section {
+  display: flex;
+    min-height: 60vh;
+
+  padding: 0 4vw;
+  position: relative;
+  
+  margin-left: -40px;
+}
+
+.portfolio-hero-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  width: 200px;
+  margin-left: -250px;
+}
+
+.portfolio-hero-title {
+  font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.portfolio-hero-hi {
+  font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.portfolio-hero-hi .highlight {
+  color: #ff3c6f;
+  font-weight: 800;
+}
+
+.portfolio-hero-location {
+  font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.portfolio-hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
+  margin-right: -25rem;
+}
+
+.portfolio-hero-img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10%;
+  border: 6px solid #181818;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  background: #222;
+}
+
+/* --- Languages and Skills List --- */
+.portfolio-languages-list,
+.portfolio-skills-list {
+  background: rgba(31,44,71,0.18);
+  border-radius: 0.8rem;
+  padding: 1rem 1.2rem;
+  margin: 0 auto 1.5rem auto;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.portfolio-languages-list h2,
+.portfolio-skills-list h2 {
+  color: #fafafc;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.portfolio-languages-list ul,
+.portfolio-skills-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-languages-list li,
+.portfolio-skills-list li {
+  color: #fafafc;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* --- Button Row --- */
+.portfolio-btn-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-language-btn,
+.portfolio-skills-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #080808;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.portfolio-language-btn:hover,
+.portfolio-skills-btn:hover {
+  background: #0fbedd;
+}
+
+/* --- Profile Summary and Contact Details --- */
+.portfolio-profile-summary-hero {
+  margin: 1.2rem 0 1.2rem 0;
+  color: #fafafc;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.portfolio-contact-details-hero {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  margin-bottom: 1.2rem;
+  color: #fafafc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.portfolio-contact-details-hero span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .portfolio-hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    min-height: 50vh;
+  }
+  .portfolio-hero-left, .portfolio-hero-right {
+    flex: unset;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .portfolio-hero-img {
+    width: 180px;
+    height: 180px;
+    margin-top: 2rem;
+  }
+  .portfolio-hero-hi {
+    font-size: 2rem;
+  }
+  .portfolio-hero-location {
+    font-size: 1.3rem;
+  }
+  .portfolio-languages-list,
+  .portfolio-skills-list {
+    max-width: 95vw;
+    font-size: 1rem;
+    padding: 0.8rem 0.7rem;
+  }
+  .portfolio-btn-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}

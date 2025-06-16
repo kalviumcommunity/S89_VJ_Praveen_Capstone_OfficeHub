@@ -1,0 +1,175 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  
+}
+.resume-container {
+  width: 100%;
+  height: 105rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.resume-wrapper {
+  width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  display: flex;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/* === LEFT PANEL === */
+.Left-panel {
+  background: #0e0101;
+  color: #fff;
+  width: 35%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.section ul li {
+  color: #fff;
+}
+
+.profile-pic-container {
+  margin-bottom: 20px;
+}
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
+
+.resume-Left .section {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.resume-Left h3 {
+  background: #fff;
+  color: #111;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+  display: inline-block;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.resume-Left p, 
+.resume-Left li {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.resume-Left ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* === RIGHT PANEL === */
+.right-panel {
+  width: 65%;
+  padding: 32px;
+  color: #111;
+}
+
+.resume-right h1 {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+}
+
+.resume-right h2 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.highlights {
+  color: #c69a4d;
+}
+
+.section h3  {
+  font-size: 1rem;
+  background-color: #c69a4d;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.edu-item {
+  margin-bottom: 14px;
+}
+
+.edu-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.edu-item p {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.skills-wrapper {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.skill-items {
+  text-align: center;
+  border: 1px solid #c69a4d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 30%;
+  background-color: #f9f9f9;
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.skill-scores {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  color: #c69a4d;
+}
+
+/* Increase the height of the details (form) page for Creative Resume */
+.creative-form-container {
+  height: 120rem; /* Increased from 100vh for more space */
+  width: 100vw;
+  background: linear-gradient(120deg, #f7f7f7 0%, #e7e0dc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .resume-wrapper {
+    flex-direction: column;
+    width: 95%;
+  }
+  .resume-left, .resume-right {
+    width: 100%;
+  }
+}

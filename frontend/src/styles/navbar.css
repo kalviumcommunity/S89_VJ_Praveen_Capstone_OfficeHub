@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center;
+  padding: 0.5rem 1rem; /* Adjusted padding for smaller navbar */
+  background: linear-gradient(90deg, #111112, #5b5a5a); /* Gradient background */
+  color: #ffffff; /* White text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Ensure it spans the full page width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Align it to the top of the viewport */
+  left: 0; /* Align it to the left of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  overflow: hidden; /* Prevent content from overflowing */
+  position: fixed;
+}
+
+.navbar-logo{
+  margin-top: -7rem;
+  margin-bottom: -7rem;
+  margin-left: -1rem; /* Adjust logo position */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Align all links to the right */
+  gap: 0.8rem; /* Reduced gap between links */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 0; /* Remove extra margin */
+  width: auto;
+  margin-right: 5rem; /* Adjust width dynamically */
+}
+
+.navbar-links li {
+  display: flex;
+}
+
+.navbar-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem; /* Adjusted font size for links */
+  font-weight: 500;
+  padding: 0.4rem 0.8rem; /* Adjusted padding for smaller links */
+  border-radius: 4px; /* Rounded corners for links */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for hover effects */
+  white-space: nowrap; /* Prevent text from breaking into multiple lines */
+}
+
+.navbar-links li a:hover {
+  background-color: #ffffff; /* White background on hover */
+  color: #0056b3; /* Blue text on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack logo and links vertically */
+    align-items: center;
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .navbar-links {
+    justify-content: center; /* Center-align links */
+    gap: 0.5rem; /* Reduce gap for smaller screens */
+  }
+
+  .navbar-logo a {
+    margin-bottom: 0.5rem; /* Add space between logo and links */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    flex-direction: column; /* Stack links vertically on very small screens */
+    gap: 0.3rem; /* Reduce gap further for very small screens */
+  }
+
+  .navbar-links li a {
+    font-size: 0.8rem; /* Reduce font size for links */
+    padding: 0.3rem 0.6rem; /* Further reduce padding for smaller links */
+  }
+
+  .navbar-logo a {
+    font-size: 1.2rem; /* Reduce logo size for very small screens */
+  }
+}

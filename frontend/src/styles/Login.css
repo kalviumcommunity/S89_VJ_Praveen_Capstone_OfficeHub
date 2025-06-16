@@ -1,0 +1,97 @@
+/* ...existing styles... */
+
+.openpage-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.openpage-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: 
+    /* much less white overlay */
+    url('https://i.pinimg.com/736x/3f/38/2f/3f382fe2f0df212049afff6d99a97e74.jpg') center center/cover no-repeat;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-form h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Adjust input and button styles for visibility */
+.login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+
+.login-button,
+.google-signin-button {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-button {
+  background: #0369d6;
+  color: #fff;
+}
+
+.google-signin-button {
+  background: #fff;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  margin-right: 8px;
+}
+
+.or-divider {
+  text-align: center;
+  color: #ccc;
+  margin: 1rem 0;
+}
+
+.signup-link {
+  text-align: center;
+  color: #fff;
+}
