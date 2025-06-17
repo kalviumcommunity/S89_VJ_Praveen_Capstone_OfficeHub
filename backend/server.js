@@ -51,10 +51,11 @@ app.get("/", (req, res) => {
   res.send("this is backend");
 });
 
+// Importing routers
 const portfolioRouter = require("./controllers/portfolioRouter");
 const resumeRouter = require("./controllers/resumeRouter");
 const storeRouter = require("./controllers/storeRouter");   
-const userRouter = require("./controllers/userRouter");
+const userRouter = require("./controllers/UserRouter");
 const cartRouter = require("./controllers/cartRouter");
 const productRouter = require("./controllers/productRouter");
 const authRoutes = require("./routes/authRoutes");
