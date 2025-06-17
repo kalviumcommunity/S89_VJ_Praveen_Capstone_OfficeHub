@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/ModernResume.css';
+import '../styles/Modernresume.css';
 
 const ModernResume = () => {
   const [formData, setFormData] = useState({
