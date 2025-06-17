@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: ['http://localhost:5173', 'https://officehub1.netlify.app'], credentials: true }));
 app.use(express.json());
 
 const mongoose = require("mongoose");
@@ -25,7 +25,7 @@ app.use(session({
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "https://s89-vj-praveen-capstone-officehub-6.onrender.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     // Here you would find or create a user in your database
@@ -92,7 +92,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:5173/home');
+    res.redirect('https://officehub1.netlify.app/home');
   });
 
 

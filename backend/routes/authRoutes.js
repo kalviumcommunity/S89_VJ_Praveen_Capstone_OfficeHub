@@ -6,10 +6,10 @@ router.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/google/callback', 
-  passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }),
+  passport.authenticate('google', { failureRedirect: 'https://officehub1.netlify.app/login' }),
   function(req, res) {
     // Successful authentication, redirect to frontend
-    res.redirect('http://localhost:5173/home');
+    res.redirect('https://officehub1.netlify.app/home');
   });
 
 module.exports = router;
