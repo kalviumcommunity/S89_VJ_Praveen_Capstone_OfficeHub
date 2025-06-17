@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Footer.css'; // Import footer styles
+import '../styles/footer.css'; // Import footer styles
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaTwitter, FaYoutube, FaEnvelope, FaFacebook } from 'react-icons/fa'; // Import icons
 
