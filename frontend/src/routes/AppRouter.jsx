@@ -9,10 +9,10 @@ import Signup from '../pages/Signup';
 import Footer from '../components/Footer';
 import Clothing from '../pages/clothing'; // Import the Clothing component
 import Navbar from '../components/Navbar';  
-import ModernResume from '../pages/ModernResume';
+import ModernResume from '../pages/Modernresume';
 import WatchPage from '../pages/watch';
 import ShoePage from '../pages/shoe';
-import ProfessionalResume from '../pages/ProfessionalResume';
+import ProfessionalResume from '../pages/professionalresume';
 import LaptopPage from '../pages/laptop'; 
 import PerfumePage from '../pages/perfume'; // Import the Perfume component
 import CartPage from '../pages/Cart';
