@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import '../styles/Login.css';
 import { FaGoogle } from 'react-icons/fa';
 import axios from 'axios';
-import vid from '../../../images/ba.mp4';
+import vid from '../../images/ba.mp4';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/user/login', {
+      const response = await axios.post('https://s89-vj-praveen-capstone-officehub-6.onrender.com/user/login', {
         email,
         password
       });
@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://s89-vj-praveen-capstone-officehub-6.onrender.com/auth/google';
   };
 
   return (

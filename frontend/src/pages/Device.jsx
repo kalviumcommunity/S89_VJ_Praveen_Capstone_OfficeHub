@@ -18,7 +18,7 @@ const DevicePage = () => {
   useEffect(() => {
     const fetchDevice = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/devices');
+        const response = await axios.get('https://s89-vj-praveen-capstone-officehub-6.onrender.com/devices');
         setDevices(response.data);
         setFilteredDevices(response.data);
       } catch (err) {

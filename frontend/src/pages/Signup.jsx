@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Signup.css';
 import { FaGoogle } from 'react-icons/fa';
-import vid from '../../../images/ba.mp4'; // <-- Import your video
+import vid from '../../images/ba.mp4'; // <-- Import your video
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +36,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/user/signup', formData);
+      const response = await axios.post('https://s89-vj-praveen-capstone-officehub-6.onrender.com/user/signup', formData);
 
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify({
@@ -143,7 +143,7 @@ const Signup = () => {
 
 const GoogleSignUpButton = () => {
   const handleGoogleSignUp = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://s89-vj-praveen-capstone-officehub-6.onrender.com/auth/google';
   };
 
   return (

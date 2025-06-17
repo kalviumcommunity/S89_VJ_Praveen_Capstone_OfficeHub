@@ -14,7 +14,7 @@ const WatchPage = () => {
   useEffect(() => {
     const fetchWatches = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/watche');
+        const response = await axios.get('https://s89-vj-praveen-capstone-officehub-6.onrender.com/watche');
         setWatches(response.data);
         setLoading(false);
       } catch (err) {

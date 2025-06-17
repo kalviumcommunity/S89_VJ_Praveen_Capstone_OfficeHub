@@ -14,7 +14,7 @@ const PerfumePage = () => {
   useEffect(() => {
     const fetchPerfume = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/perfume');
+        const response = await axios.get('https://s89-vj-praveen-capstone-officehub-6.onrender.com/perfume');
         setPerfumes(response.data);
         setLoading(false);
       } catch (err) {

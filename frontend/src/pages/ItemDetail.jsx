@@ -27,7 +27,7 @@ const ItemDetail = () => {
           setLoading(false);
           return;
         }
-        const response = await fetch(`http://localhost:3000/${endpoint}`);
+        const response = await fetch(`https://s89-vj-praveen-capstone-officehub-6.onrender.com/${endpoint}`);
         const data = await response.json();
         const found = data.find((i) => String(i.id) === String(id));
         if (found) {
