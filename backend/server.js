@@ -51,6 +51,7 @@ app.get("/", (req, res) => {
   res.send("this is backend");
 });
 
+// Importing routers
 const portfolioRouter = require("./controllers/portfolioRouter");
 const resumeRouter = require("./controllers/resumeRouter");
 const storeRouter = require("./controllers/storeRouter");   
