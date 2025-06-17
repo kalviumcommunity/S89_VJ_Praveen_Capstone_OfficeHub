@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-const User = require("../models/UserSchema");
+const User = require("../models/userSchema");
 
 
 userRouter.post('/signup', async (req, res) => {
