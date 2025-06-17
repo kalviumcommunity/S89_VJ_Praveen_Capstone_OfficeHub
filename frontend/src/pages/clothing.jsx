@@ -1,15 +1,15 @@
 import React from 'react';
 import '../styles/clothing.css'; 
 import Navbar from '../components/Navbar'; // Reuse the CSS file for styling
-import trousers from '../../../images/dress/men/trouser.png'; // Image for product 1
-import tshirt from '../../../images/dress/men/hoodie.png'; // Image for product 2
-import shirt from '../../../images/dress/men/formal.png'; // Image for product 3
-import blazer from '../../../images/dress/men/blazer.png'; // Imae for product 5
-import saree from '../../../images/dress/women/saree.png'; // Image for product 1
-import top from '../../../images/dress/women/frock.png'; // Image for product 2
-import party from '../../../images/dress/women/shirts.png'; // Image for product 3
-import formal from '../../../images/dress/women/shir.webp'; // Imae for product 5
-import trouser from '../../../images/dress/women/trousers.png'; // Image for product 1
+import trousers from '../../images/dress/men/trouser.png'; // Image for product 1
+import tshirt from '../../images/dress/men/hoodie.png'; // Image for product 2
+import shirt from '../../images/dress/men/formal.png'; // Image for product 3
+import blazer from '../../images/dress/men/blazer.png'; // Imae for product 5
+import saree from '../../images/dress/women/saree.png'; // Image for product 1
+import top from '../../images/dress/women/frock.png'; // Image for product 2
+import party from '../../images/dress/women/shirts.png'; // Image for product 3
+import formal from '../../images/dress/women/shir.webp'; // Imae for product 5
+import trouser from '../../images/dress/women/trousers.png'; // Image for product 1
 
 
 const Clothing = () => {

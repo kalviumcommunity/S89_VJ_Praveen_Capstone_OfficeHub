@@ -2,10 +2,10 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/open.css';
-import vid from '../../../images/port.mp4';
+import vid from '../../images/port.mp4';
 import '../styles/Navbar.css'; // Import styles for the navbar
-import logo from '../../../images/l.png';
-import open from '../../../images/open.png'; // Import the open image
+import logo from '../../images/l.png';
+import open from '../../images/open.png'; // Import the open image
 
 const OpenPage = () => {
   const navigate = useNavigate();

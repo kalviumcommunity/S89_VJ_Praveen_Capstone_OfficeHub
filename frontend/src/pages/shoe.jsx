@@ -17,7 +17,7 @@ const ShoePage = () => {
   useEffect(() => {
     const fetchShoes = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/Shoe');
+        const response = await axios.get('https://s89-vj-praveen-capstone-officehub-6.onrender.com/Shoe');
         const data = response.data;
         setShoes(data);
         setFilteredShoes(data);

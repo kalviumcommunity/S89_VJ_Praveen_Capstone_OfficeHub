@@ -17,7 +17,7 @@ const LaptopPage = () => {
   useEffect(() => {
     const fetchLaptops = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/laptop');
+        const response = await axios.get('https://s89-vj-praveen-capstone-officehub-6.onrender.com/laptop');
         const data = response.data;
 
         setLaptops(data);

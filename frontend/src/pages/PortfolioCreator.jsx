@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../styles/PortfolioCreator.css';
-import bak from '../../../images/port.mp4';
+import bak from '../../images/port.mp4';
 import React from 'react';
 import Navbar from '../components/Navbar';
 
