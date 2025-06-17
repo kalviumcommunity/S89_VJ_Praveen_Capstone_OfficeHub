@@ -7,7 +7,7 @@ import Ecommerce from '../pages/Ecommerce'; // Import the Ecommerce component
 import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Footer from '../components/Footer';
-import Clothing from '../pages/Clothing'; // Import the Clothing component
+import Clothing from '../pages/clothing'; // Import the Clothing component
 import Navbar from '../components/Navbar';  
 import ModernResume from '../pages/ModernResume';
 import WatchPage from '../pages/watch';
