@@ -77,6 +77,7 @@ Skills: ${form.skills}
         <Navbar />
         {!showPortfolio ? (
           <>
+            
             <h1>Build Your portfolio</h1>
             <div className="form-group">
               <label>Upload Profile Picture</label>
@@ -96,15 +97,15 @@ Skills: ${form.skills}
             </div>
             <div className="form-group">
               <label>Profile Summary</label>
-              <textarea  name="summary" placeholder="A brief summary about you" value={form.summary} onChange={handleChange} rows={3} />
+              <textarea  name="summary" placeholder="A brief summary about you" value={form.summary} onChange={handleChange}  />
             </div>
             <div className="form-group">
               <label>Languages (comma separated)</label>
-              <textarea name="languages" placeholder="e.g. English, Hindi, Spanish" value={form.languages} onChange={handleChange} rows={2} />
+              <textarea name="languages" placeholder="e.g. English, Hindi, Spanish" value={form.languages} onChange={handleChange} />
             </div>
             <div className="form-group">
               <label>Skills (comma separated)</label>
-              <textarea name="skills" placeholder="e.g. React, Node.js, CSS" value={form.skills} onChange={handleChange} rows={2} />
+              <textarea name="skills" placeholder="e.g. React, Node.js, CSS" value={form.skills} onChange={handleChange}  />
             </div>
             <button onClick={handleGenerate}>Generate Portfolio</button>
           </>
@@ -112,6 +113,10 @@ Skills: ${form.skills}
           <div className="portfolio-generated">
             <div className="portfolio-hero-section">
               <div className="portfolio-hero-left">
+                {/* Add this line for the Portfolio name/title */}
+                <div className="portfolio-title-left" style={{ fontWeight: "bold", fontSize: "2rem", color: "#fafafc", marginBottom: "1rem" }}>
+                  Portfolio
+                </div>
                 <div className="portfolio-hero-title">{form.title}</div>
                 <div className="portfolio-hero-hi">
                   Hi, I'm <span className="highlight">{form.name || "Kevin"}</span>

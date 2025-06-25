@@ -3,7 +3,9 @@
   min-height: 100vh;
   overflow: hidden;
 }
-
+.portfolio-bg-wrapper{
+  background-color: #080808;
+}
 .portfolio-bg-video {
   position: fixed;
   min-width: 100vw;
@@ -16,17 +18,44 @@
 }
 .form-group summary{
   width: 500rem;
+  background-color: #fafafa;
+  
 }
 .portfolio-container {
-  width: 790px;
+  width: 690px;
   margin: 0 auto;
   padding: 2rem;
   margin-top: 5rem;
   border-radius: 8px;
-  
+  background-color: #ccc;
   z-index: 1;
+  margin-right: rem;
 }
-
+.form-group input{
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px rgba(113, 196, 217, 0.947);
+}
+.form-group textarea{
+  width: 100%;
+  background-color: #7a767639;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+}
 .portfolio-container h1 {
   text-align: center;
   color: #1f2c47;
