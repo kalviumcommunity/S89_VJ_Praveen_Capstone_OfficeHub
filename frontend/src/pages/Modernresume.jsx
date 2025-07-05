@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Modernresume.css';
+import html2pdf from 'html2pdf.js';
 
 const ModernResume = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const ModernResume = () => {
 
   const [showResume, setShowResume] = useState(false);
   const [photoPreview, setPhotoPreview] = useState('');
+  const resumeRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -42,8 +44,14 @@ const ModernResume = () => {
     setShowResume(true);
   };
 
-  const handlePrint = () => {
-    window.print();
+  // Download as PDF
+  const handleDownload = () => {
+    if (resumeRef.current) {
+      html2pdf()
+        .from(resumeRef.current)
+        .set({ filename: `${formData.name || 'resume'}.pdf` })
+        .save();
+    }
   };
 
   return (
@@ -67,75 +75,76 @@ const ModernResume = () => {
           <button type="submit" className="modern-btn">Generate Resume</button>
         </form>
       ) : (
-        <div className="resume-preview">
+        <div>
           <div className="print-buttons no-print">
             <button className="modern-details-btn" onClick={() => setShowResume(false)}>Edit Resume</button>
-            <button className="modern-details-btn" onClick={handlePrint}>Print Resume</button>
+            <button className="modern-details-btn" onClick={handleDownload}>Download Resume</button>
           </div>
-
-          <div className="resume-left">
-            <div className="photo-wrapper">
-              {photoPreview && <img src={photoPreview} alt="Profile" className="photo" />}
-            </div>
-            <div className="section-title">CONTACT</div>
-            <div className="contact-info">
-              <p>📱 {formData.phone}</p>
-              <p>📧 {formData.email}</p>
-              <p>📍 {formData.address}</p>
-            </div>
-            <div className="section-title">LANGUAGES</div>
-            <div className="languages">
-              {formData.languages.split(',').map((lang, i) => (
-                <div key={i} className="bar-container">
-                  <span>{lang.trim()}</span>
-                  <div className="bar"><div className="fill"></div></div>
-                </div>
-              ))}
-            </div>
-            <div className="section-title">SKILLS</div>
-            <div className="skills">
-              {formData.skills.split(',').map((skill, i) => (
-                <div key={i} className="bar-container">
-                  <span>{skill.trim()}</span>
-                  <div className="bar"><div className="fill"></div></div>
-                </div>
-              ))}
-            </div>
-            <div className="section-title">HOBBIES</div>
-            <div className="hobbies">
-              {formData.hobbies.split(',').map((hobby, i) => (
-                <span key={i} className="hobby-icon">🎯</span>
-              ))}
-            </div>
-          </div>
-
-          <div className="resume-right">
-            <div className="header">
-              <h1>{formData.name}</h1>
-              <h2>{formData.title}</h2>
-            </div>
-
-            <div className="section">
-              <h3>PROFILE</h3>
-              <p>{formData.profile}</p>
-            </div>
-
-            <div className="section">
-              <h3>EDUCATION</h3>
-              <ul>
-                {formData.education.split('\n').map((edu, i) => (
-                  <li key={i}>{edu.trim()}</li>
+          <div className="resume-preview" ref={resumeRef}>
+            <div className="resume-left">
+              <div className="photo-wrapper">
+                {photoPreview && <img src={photoPreview} alt="Profile" className="photo" />}
+              </div>
+              <div className="section-title">CONTACT</div>
+              <div className="contact-info">
+                <p>📱 {formData.phone}</p>
+                <p>📧 {formData.email}</p>
+                <p>📍 {formData.address}</p>
+              </div>
+              <div className="section-title">LANGUAGES</div>
+              <div className="languages">
+                {formData.languages.split(',').map((lang, i) => (
+                  <div key={i} className="bar-container">
+                    <span>{lang.trim()}</span>
+                    <div className="bar"><div className="fill"></div></div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+              <div className="section-title">SKILLS</div>
+              <div className="skills">
+                {formData.skills.split(',').map((skill, i) => (
+                  <div key={i} className="bar-container">
+                    <span>{skill.trim()}</span>
+                    <div className="bar"><div className="fill"></div></div>
+                  </div>
+                ))}
+              </div>
+              <div className="section-title">HOBBIES</div>
+              <div className="hobbies">
+                {formData.hobbies.split(',').map((hobby, i) => (
+                  <span key={i} className="hobby-icon">🎯</span>
+                ))}
+              </div>
             </div>
 
-            <div className="section">
-              <h3>EXPERIENCE</h3>
-              <ul>
-                {formData.experience.split('\n').map((exp, i) => (
-                  <li key={i}>{exp.trim()}</li>
-                ))}
-              </ul>
+            <div className="resume-right">
+              <div className="header">
+                <h1>{formData.name}</h1>
+                <h2>{formData.title}</h2>
+              </div>
+
+              <div className="section">
+                <h3>PROFILE</h3>
+                <p>{formData.profile}</p>
+              </div>
+
+              <div className="section">
+                <h3>EDUCATION</h3>
+                <ul>
+                  {formData.education.split('\n').map((edu, i) => (
+                    <li key={i}>{edu.trim()}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="section">
+                <h3>EXPERIENCE</h3>
+                <ul>
+                  {formData.experience.split('\n').map((exp, i) => (
+                    <li key={i}>{exp.trim()}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>

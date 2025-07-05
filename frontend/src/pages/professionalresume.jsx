@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import '../styles/professional.css'; // Import your CSS styles
+import React, { useState, useRef } from "react";
+import '../styles/professional.css';
+import html2pdf from "html2pdf.js";
 
 const ProfessionalResume = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,7 @@ const ProfessionalResume = () => {
 
   const [photoPreview, setPhotoPreview] = useState("");
   const [showResume, setShowResume] = useState(false);
+  const resumeRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -34,7 +36,15 @@ const ProfessionalResume = () => {
     setShowResume(true);
   };
 
-  const handlePrint = () => window.print();
+  // Download as PDF
+  const handleDownload = () => {
+    if (resumeRef.current) {
+      html2pdf()
+        .from(resumeRef.current)
+        .set({ filename: `${formData.name || 'resume'}.pdf` })
+        .save();
+    }
+  };
 
   return (
     <div className="resume-container">
@@ -54,7 +64,7 @@ const ProfessionalResume = () => {
           <button type="submit">Generate Resume</button>
         </form>
       ) : (
-        <div className="resume-preview">
+        <div className="resume-preview" ref={resumeRef}>
           <div className="left">
             {photoPreview && <img src={photoPreview} alt="Profile" className="profile-pic" />}
             <h3>PROFILE</h3>
@@ -89,7 +99,7 @@ const ProfessionalResume = () => {
 
             <div className="buttons">
               <button onClick={() => setShowResume(false)}>Edit</button>
-              <button onClick={handlePrint}>Print</button>
+              <button onClick={handleDownload}>Download Resume</button>
             </div>
           </div>
         </div>
