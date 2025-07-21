@@ -133,7 +133,7 @@ const CreativeResume = () => {
                   return (
                     <div key={idx} className="skill-item">
                       <div className="skill-name">{name?.trim()}</div>
-                      <div className="skill-score">{level?.trim()}/10</div>
+
                     </div>
                   );
                 })}
